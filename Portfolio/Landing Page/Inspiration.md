@@ -1,0 +1,6 @@
+![[Pasted image 20231221102400.png]]
+![[Pasted image 20231221102433.png]]
+![[Pasted image 20231221102500.jpg]]
+![[Pasted image 20231221102513.jpg]]
+![[seb-kay.webp]]
+![[Pasted image 20231221102612.png]]
