@@ -1,7 +1,8 @@
 {
-    "Home": "/",
-    "About": "/about",
-    "Portfolio": "/portfolio",
-    "Skills": "/skills",
-    "Contact": "/contact"
+    
+    "Home": {"icon": "email.svg", "url": "/"},
+    "About": {"icon": "", "url": "/about"},
+    "Portfolio": {"icon": "", "url": "/portfolio"},
+    "Skills": {"icon": "", "url": "/skills"},
+    "Contact": {"icon": "", "url": "/contact"}
 }

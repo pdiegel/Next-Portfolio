@@ -1,31 +1,26 @@
-import Link from 'next/link';
-import navigationUrls from '@/public/navigation.json'
+import Nav from './nav';
+import NavItem from './navitem';
+import EmailIcon from '@/public/email.svg';
+import LinkedInIcon from '@/public/linkedin.svg';
+import GitHubIcon from '@/public/github.svg';
+import DropDownIcon from '@/public/dropdown.svg';
+import DropDownMenu from './dropdownmenu';
 
 export default function Header() {
-
-    const displayNavigationElements = () => {
-        // Programatically display navigation items based on the 
-        // contents of navigation.json
-
-        return (
-            <ul>
-                {Object.entries(navigationUrls).map(([navName, url]) =>
-                    <li key={navName}>
-                        <Link href={url}>{navName}</Link>
-                    </li>
-                )}
-            </ul>
-        )
-
-    }
-
     return (
         <header>
             <div className='wrapper'>
                 <h1>Philip Diegel</h1>
-                <nav>
-                    {displayNavigationElements()}
-                </nav>
+                <Nav>
+                    <NavItem icon={<EmailIcon />} />
+                    <NavItem icon={<GitHubIcon />} />
+                    <NavItem icon={<LinkedInIcon />} />
+
+                    <NavItem icon={<DropDownIcon />}>
+                        {/* Dropdown goes here */}
+                        <DropDownMenu />
+                    </NavItem>
+                </Nav>
             </div>
         </header>
     );
