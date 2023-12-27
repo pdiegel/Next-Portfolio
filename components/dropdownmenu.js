@@ -1,21 +1,18 @@
 import navigationUrls from '@/public/navigation.json';
+import Link from 'next/link';
 
 export default function DropDownMenu() {
     const dropDownObjects = () => {
-        return Object.entries(navigationUrls).map(([navName, navDetails]) => {
-            return <DropDownItem key={navName} url={navDetails.url}>{navName}</DropDownItem>
+        return Object.entries(navigationUrls).map(([navName, url]) => {
+            return <DropDownItem key={navName} url={url}>{navName}</DropDownItem>
         });
     };
 
     function DropDownItem(props) {
         return (
-            <a href="#" className="menu-item">
-                {props.leftIcon && <span className="icon-button">{props.leftIcon}</span>}
-
+            <Link href={props.url ? props.url : "#"} className="menu-item">
                 {props.children}
-
-                {props.rightIcon && <span className="icon-right">{props.rightIcon}</span>}
-            </a>
+            </Link>
         );
     }
 

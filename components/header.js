@@ -12,9 +12,9 @@ export default function Header() {
             <div className='wrapper'>
                 <h1>Philip Diegel</h1>
                 <Nav>
-                    <NavItem icon={<EmailIcon />} />
-                    <NavItem icon={<GitHubIcon />} />
-                    <NavItem icon={<LinkedInIcon />} />
+                    <NavItem icon={<EmailIcon />} url="mailto:philipdiegel@gmail.com" />
+                    <NavItem icon={<GitHubIcon />} url="https://github.com/pdiegel" />
+                    <NavItem icon={<LinkedInIcon />} url="https://www.linkedin.com/in/philip-diegel-2b1a45245/" />
 
                     <NavItem icon={<DropDownIcon />}>
                         {/* Dropdown goes here */}
