@@ -1,0 +1,39 @@
+.card {
+    background-color: var(--banner-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-align: left;
+    margin-bottom: var(--ungrouped-margin);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.card:last-of-type {
+    margin-bottom: 0;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--grouped-margin)/2);
+}
+
+.card ul {
+    padding-left: var(--grouped-margin);
+}
+
+.card ul:not(:last-child) li:last-child {
+    margin-bottom: var(--ungrouped-margin);
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    margin: var(--grouped-margin) 0 0;
+}
+
+.icons li {
+    margin: 0 5px;
+}
+
+.icons li:first-child {
+    margin-left: 0;
+}
