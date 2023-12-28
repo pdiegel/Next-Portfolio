@@ -70,7 +70,7 @@ img {
 }
 
 main {
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 header,
@@ -195,10 +195,11 @@ p {
 }
 
 .home-buttons {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .home-buttons a {
+    display: inline-block;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
     background-color: var(--primary-color);
     border: none;

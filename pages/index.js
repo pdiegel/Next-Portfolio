@@ -20,7 +20,7 @@ export default function Home() {
                         foundation and continuous curiosity, I aim to add creativity,
                         efficiency, and problem-solving skills to every project.</p>
                     <div className='home-buttons'>
-                        <Link href="/about">My Projects</Link>
+                        <Link href="/portfolio">My Projects</Link>
                         <Link href="/contact">Contact Me</Link>
                     </div>
                 </div>
