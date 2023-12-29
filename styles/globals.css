@@ -72,7 +72,9 @@ h5,
 p,
 button,
 a,
-li {
+li,
+label,
+select {
     font-size: 1.15rem;
 }
 
@@ -242,4 +244,14 @@ footer {
 
 footer p {
     margin-bottom: 0;
+}
+
+.selection-box {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: var(--grouped-margin);
+}
+
+.selection-box label {
+    margin-right: 10px;
 }

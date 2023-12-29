@@ -1,9 +1,13 @@
+.heading {
+    text-align: left;
+}
+
 .card {
     background-color: var(--banner-color);
     border-radius: calc(var(--border-radius) / 2);
     text-align: left;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    word-break: break-all;
+    hyphens: auto;
     padding: 10px 20px;
 }
 
@@ -20,4 +24,14 @@
 
 .cardWrapper :not(:last-of-type) {
     margin-bottom: var(--ungrouped-margin);
+}
+
+#sortType,
+#sortDirection {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
 }

@@ -21,12 +21,13 @@ export default function Summary() {
                 <br />
                 Location: Sarasota, Florida
                 <br />
-                <div className={styles.icons}>
-                    <NavItem icon={<EmailIcon />} url="mailto:philipdiegel@gmail.com" />
-                    <NavItem icon={<GitHubIcon />} url="https://github.com/pdiegel" />
-                    <NavItem icon={<LinkedInIcon />} url="https://www.linkedin.com/in/philip-diegel" />
-                </div>
             </p>
+            <div className={styles.icons}>
+                <NavItem icon={<EmailIcon />} url="mailto:philipdiegel@gmail.com" />
+                <NavItem icon={<GitHubIcon />} url="https://github.com/pdiegel" />
+                <NavItem icon={<LinkedInIcon />} url="https://www.linkedin.com/in/philip-diegel" />
+            </div>
+
         </>
     )
 }

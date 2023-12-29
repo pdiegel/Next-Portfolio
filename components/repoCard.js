@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from '@/styles/Projects.module.css';
 
 export default function RepoCard(props) {
-    const { description, url, name, tags } = props;
+    const { description, url, name, tags, creationDate } = props;
 
     return (
         <div className={styles.card}>
