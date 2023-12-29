@@ -1,4 +1,4 @@
-export default function EmploymentHistory() {
+export default function ProfessionalSkills() {
     return (
         <>
             <h2>Professional Skills</h2>

@@ -13,7 +13,7 @@ html {
     --font-main: 'DM Sans', sans-serif;
     --icon-color: #e0e0e0;
     --grouped-margin: 20px;
-    --ungrouped-margin: calc(var(--grouped-margin)*3);
+    --ungrouped-margin: calc(var(--grouped-margin)*2);
     --header-height: 6rem;
     --box-shadow-main: inset 0 -1px var(--border-color);
 }

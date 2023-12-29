@@ -1,0 +1,23 @@
+.card {
+    background-color: var(--banner-color);
+    border-radius: calc(var(--border-radius) / 2);
+    text-align: left;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    word-break: break-all;
+    padding: 10px 20px;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+.cardWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.cardWrapper :not(:last-of-type) {
+    margin-bottom: var(--ungrouped-margin);
+}

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import InfoCard from '@/components/infocard';
 import Summary from '@/components/about/summary';
-import EmploymentHistory from '@/components/about/employment/employment';
+import ProfessionalSkills from '@/components/about/employment/employment';
 import Skills from '@/components/about/skills';
 import Education from '@/components/about/education/education';
 import Certifications from '@/components/about/certifications';
@@ -15,7 +15,7 @@ export default function About() {
             <main className='content'>
                 <div className='wrapper'>
                     <InfoCard><Summary /></InfoCard>
-                    <InfoCard><EmploymentHistory /></InfoCard>
+                    <InfoCard><ProfessionalSkills /></InfoCard>
                     <InfoCard><Skills /></InfoCard>
                     <InfoCard><Education /></InfoCard>
                     <InfoCard>
