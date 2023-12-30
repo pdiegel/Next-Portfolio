@@ -12,7 +12,7 @@ export default function Home() {
             <main className='content'>
                 <div className='wrapper'>
                     <h2>Hi, I&apos;m Philip!</h2>
-                    <Image src={PortraitImg} alt='Portrait' />
+                    <Image className='portrait' src={PortraitImg} alt='Portrait' />
                     <h3>Software Developer</h3>
 
                     <p className='introduction'>

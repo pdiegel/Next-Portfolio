@@ -9,6 +9,11 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     hyphens: auto;
     padding: 10px 20px;
+    margin-bottom: var(--ungrouped-margin);
+}
+
+.card:last-of-type {
+    margin-bottom: 0;
 }
 
 .card p {
@@ -17,13 +22,7 @@
 
 .cardWrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.cardWrapper :not(:last-of-type) {
-    margin-bottom: var(--ungrouped-margin);
+    flex-direction: column;
 }
 
 #sortType,
@@ -34,4 +33,12 @@
     border: 1px solid #ccc;
     padding: 5px;
     font-size: 16px;
+}
+
+.languageIcon {
+    margin-right: 5px;
+}
+
+.languageIcon:last-of-type {
+    margin-right: 0;
 }

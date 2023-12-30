@@ -68,8 +68,8 @@ export default function Projects() {
                     </SelectionBox>
 
                     <div className={styles.cardWrapper}>
-                        {repos && repos.map(({ description, html_url, name, topics }, index) => {
-                            return <RepoCard key={index} description={description} url={html_url} name={name} tags={topics} />;
+                        {repos && repos.map(({ description, html_url, name, topics, languages_url }, index) => {
+                            return <RepoCard key={index} description={description} url={html_url} name={name} tags={topics} languagesURL={languages_url} />;
                         })}
                     </div>
                 </div>

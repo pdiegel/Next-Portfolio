@@ -195,7 +195,7 @@ svg {
     margin-left: auto;
 }
 
-img {
+.portrait {
     border-radius: 10px;
     height: 150px;
     width: auto;
