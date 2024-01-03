@@ -42,3 +42,14 @@
 .languageIcon:last-of-type {
     margin-right: 0;
 }
+
+.cardLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#loading {
+    margin: 0 auto;
+}

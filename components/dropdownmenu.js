@@ -17,8 +17,8 @@ export default function DropDownMenu() {
     }
 
     return (
-        <div className="dropdown">
+        <>
             {dropDownObjects()}
-        </div>
+        </>
     )
 }

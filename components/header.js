@@ -5,11 +5,12 @@ import LinkedInIcon from '@/public/linkedin.svg';
 import GitHubIcon from '@/public/github.svg';
 import DropDownIcon from '@/public/dropdown.svg';
 import DropDownMenu from './dropdownmenu';
+import FromLeftEntryDiv from './fromLeftEntryDiv';
 
 export default function Header() {
     return (
         <header>
-            <div className='wrapper'>
+            <FromLeftEntryDiv className='wrapper'>
                 <h1>Philip Diegel</h1>
                 <Nav>
                     <NavItem icon={<EmailIcon />} url="mailto:philipdiegel@gmail.com" />
@@ -21,7 +22,7 @@ export default function Header() {
                         <DropDownMenu />
                     </NavItem>
                 </Nav>
-            </div>
+            </FromLeftEntryDiv>
         </header>
     );
 }

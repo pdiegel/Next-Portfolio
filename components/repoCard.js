@@ -3,23 +3,34 @@ import styles from '@/styles/Projects.module.css';
 import languageIconMap from '@/public/languages/language_icon_map.json';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import FromBelowEntryDiv from './fromBelowEntryDiv';
 
-export default function RepoCard(props) {
+export default function RepoCard({ description, url, name, languages_url, homepage }) {
     const [languages, setLanguages] = useState([]);
-    const { description, url, name, languagesURL } = props;
+
 
     useEffect(() => {
-        fetch(languagesURL)
-            .then(req => req.status === 200 && req.json())
+        const cachedLanguages = localStorage.getItem(`languages_${name}`);
+        if (typeof cachedLanguages === 'string' && cachedLanguages.length > 0) {
+            setLanguages(JSON.parse(cachedLanguages));
+            console.log(`Loaded cached languages for ${name}`);
+            return;
+        }
+        fetch(languages_url)
+            .then(req => {
+                return req.status === 200 && req.json();
+            })
             .then(data => {
-                console.log(data);
+                localStorage.setItem(`languages_${name}`, JSON.stringify(Object.keys(data)));
                 setLanguages(Object.keys(data));
-            }
-            );
-    }, [languagesURL]);
+            })
+            .catch(err => {
+                console.log(`Error fetching data: ${err}`);
+            });
+    }, [languages_url, name]);
 
     return (
-        <div className={styles.card}>
+        <FromBelowEntryDiv className={styles.card}>
             <h3>{name}</h3>
             <p>{description}</p>
 
@@ -32,7 +43,10 @@ export default function RepoCard(props) {
                     return <span key={index}>{value}, </span>
                 })}
             </p>
-            {url && <Link href={url}>View on GitHub</Link>}
-        </div>
+            <div className={styles.cardLinks}>
+                {homepage && <Link href={homepage} target='_blank'>View Live</Link>}
+                {url && <Link href={url} target='_blank'>View on GitHub</Link>}
+            </div>
+        </FromBelowEntryDiv>
     )
 }

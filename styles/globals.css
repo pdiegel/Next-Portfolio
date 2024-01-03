@@ -139,6 +139,7 @@ svg {
 }
 
 .nav-item {
+    position: relative;
     display: flex;
     text-align: center;
     margin: 0 10px;
@@ -158,22 +159,15 @@ svg {
 }
 
 .nav-item .dropdown {
-    position: absolute;
-    top: calc(var(--header-height) + 2.5rem);
-    left: -100%;
+    position: fixed;
+    left: 10px;
+    top: calc(var(--header-height) + var(--ungrouped-margin));
     background-color: var(--banner-color);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 0.5rem;
     width: 200px;
     transition: left 500ms ease;
-    pointer-events: none;
-}
-
-.nav-item.open .dropdown {
-    left: 0.5rem;
-    pointer-events: all;
-    box-shadow: 1px 1px 5px var(--border-color);
 }
 
 .menu-item {
@@ -254,4 +248,15 @@ footer p {
 
 .selection-box label {
     margin-right: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    .nav-item .dropdown {
+        position: absolute;
+        top: 50px;
+        left: -5px;
+        border-radius: 0 0 5px 5px;
+        border-top: none;
+    }
+
 }
