@@ -13,7 +13,6 @@ export default function Home() {
                 <div className='wrapper'>
                     <h2>Hi, I&apos;m Philip!</h2>
                     <Image className='portrait' src={PortraitImg} alt='Portrait' />
-                    <h3>Software Developer</h3>
 
                     <p className='introduction'>
                         Software developer in Sarasota, Florida.

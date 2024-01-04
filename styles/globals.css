@@ -8,7 +8,7 @@ html {
     --background-main: #FFF;
     --banner-color: #F6F8FA;
     --border-color: #D0D7DE;
-    --max-width: 500px;
+    --max-width: 800px;
     --border-radius: 12px;
     --font-main: 'DM Sans', sans-serif;
     --icon-color: #e0e0e0;
@@ -33,16 +33,17 @@ html {
 
 .content {
     flex: 1;
+    text-align: center;
 }
 
 .wrapper {
-    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
 }
 
 body {
     background-color: var(--background-main);
+    width: 100%;
 }
 
 h1 {
@@ -64,9 +65,10 @@ li {
 
 h3 {
     letter-spacing: -1px;
+    font-size: 1.5rem;
 }
 
-h3,
+
 h4,
 h5,
 p,
@@ -79,8 +81,7 @@ select {
 }
 
 main {
-    padding: 20px;
-    text-align: center;
+    padding: var(--ungrouped-margin) 20px;
 }
 
 header,
@@ -92,6 +93,7 @@ footer {
 header {
     box-shadow: inset 0 -1px var(--border-color);
     height: var(--header-height);
+    z-index: 5;
 }
 
 header div,
@@ -119,18 +121,21 @@ header nav a:hover {
 }
 
 .navbar-nav {
-    max-width: 100%;
-    height: 100%;
-    display: flex;
     justify-content: center;
 }
 
-.icon-button {
+.icon-button,
+.nav-item button {
     background-color: var(--icon-color);
     padding: 10px;
     border-radius: 25%;
     height: 20px;
     width: 20px;
+    box-sizing: content-box;
+}
+
+.nav-item button {
+    border: none;
 }
 
 svg {
@@ -145,12 +150,21 @@ svg {
     margin: 0 10px;
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.nav-item button:hover {
     cursor: pointer;
 }
 
 .nav-item:hover > .icon-button > svg > path {
     fill: var(--primary-color);
+}
+
+.nav-item > .icon-button {
+    transition: scale 200ms;
+}
+
+.nav-item:hover > .icon-button {
+    scale: 1.1;
 }
 
 .icon-button svg path {
@@ -160,14 +174,22 @@ svg {
 
 .nav-item .dropdown {
     position: fixed;
-    left: 10px;
-    top: calc(var(--header-height) + var(--ungrouped-margin));
+    left: 5px;
+    top: 60px;
     background-color: var(--banner-color);
-    border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 0.5rem;
     width: 200px;
     transition: left 500ms ease;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+header .nav-item:last-of-type {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 10px;
 }
 
 .menu-item {
@@ -194,6 +216,7 @@ svg {
     height: 150px;
     width: auto;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: var(--grouped-margin);
 }
 
 p {
@@ -231,6 +254,10 @@ p {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
+main ul {
+    padding-left: var(--grouped-margin);
+}
+
 footer {
     text-align: center;
     box-shadow: inset 0 1px var(--border-color);
@@ -250,13 +277,70 @@ footer p {
     margin-right: 10px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
+
+    h1 {
+        text-wrap: nowrap;
+        margin: 0;
+    }
+
+    header {
+        height: auto;
+    }
+
+    header .wrapper {
+        max-width: 100%;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    header nav ul {
+        width: fit-content;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    header .nav-item:last-of-type {
+        position: relative;
+        margin: 0 0 0 10px;
+    }
+
     .nav-item .dropdown {
         position: absolute;
-        top: 50px;
-        left: -5px;
+        top: 53px;
+        left: -175px;
         border-radius: 0 0 5px 5px;
         border-top: none;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+        border-top: none;
     }
+
+    main,
+    .content {
+        text-align: left;
+    }
+
+    .home-buttons {
+        justify-content: flex-start;
+    }
+
+
+}
+
+@media screen and (min-width: 1000px) {
+
+    header .wrapper,
+    .wrapper {
+        max-width: 1000px;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
 
 }

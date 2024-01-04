@@ -13,9 +13,9 @@ export default function NavItem({ children, icon, url }) {
                 {icon}
             </Link>
         }
-        return (<><Link href={url ? url : "#"} className="icon-button" onClick={() => setOpen(!open)}>
+        return (<><button className="icon-button" onClick={() => setOpen(!open)}>
             {open ? <CloseIcon /> : icon}
-        </Link>
+        </button>
             {hamburgerMenu()}
         </>
         )

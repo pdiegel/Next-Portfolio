@@ -2,7 +2,9 @@
 export default function Footer() {
     return (
         <footer>
-            <p>© 2023 Philip Diegel. All rights reserved.</p>
+            <div className='wrapper'>
+                <p>© 2023 Philip Diegel. All rights reserved.</p>
+            </div>
         </footer>
     )
 }
