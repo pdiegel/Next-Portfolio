@@ -3,9 +3,9 @@ import styles from '@/styles/Projects.module.css';
 import languageIconMap from '@/public/languages/language_icon_map.json';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import FromBelowEntryDiv from './fromBelowEntryDiv';
+import FromBelowEntryDiv from '../fromBelowEntryDiv';
 
-export default function RepoCard({ description, url, name, languages_url, homepage }) {
+export default function RepoCard({ description, html_url, name, languages_url, homepage }) {
     const [languages, setLanguages] = useState([]);
 
 
@@ -45,7 +45,7 @@ export default function RepoCard({ description, url, name, languages_url, homepa
             </p>
             <div className={styles.cardLinks}>
                 {homepage && <Link href={homepage} target='_blank'>View Live</Link>}
-                {url && <Link href={url} target='_blank'>View on GitHub</Link>}
+                {html_url && <Link href={html_url} target='_blank'>View on GitHub</Link>}
             </div>
         </FromBelowEntryDiv>
     )

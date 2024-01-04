@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import RepoCard from '@/components/repoCard';
+import RepoCard from '@/components/projects/repoCard';
 import { useState, useEffect, useCallback } from 'react';
 import styles from '@/styles/Projects.module.css';
 import SelectionBox from '@/components/selectionbox';

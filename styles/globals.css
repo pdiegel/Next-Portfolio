@@ -128,7 +128,7 @@ header nav a:hover {
 .icon-button {
     background-color: var(--icon-color);
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 25%;
     height: 20px;
     width: 20px;
 }
