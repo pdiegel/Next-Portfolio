@@ -3,6 +3,34 @@ import FromBelowEntryDiv from '@/components/fromBelowEntryDiv';
 import styles from '@/styles/Contact.module.css';
 
 export default function Contact() {
+    const submitForm = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        const formDataObj = {};
+        formData.forEach((value, key) => {
+            formDataObj[key] = value;
+        });
+
+        console.log(JSON.stringify(formDataObj));
+
+        fetch('/api/contact', {
+            method: 'POST',
+            body: JSON.stringify(formDataObj),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            if (res.status === 200) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                alert('There was an error sending your message.');
+            }
+        });
+    }
+
     return (
         <>
             <Head>
@@ -16,7 +44,7 @@ export default function Contact() {
                         If you would like to contact me via email, please use the form below.
                     </p>
 
-                    <form name="contact" method="POST" data-netlify="true" className={styles.form}>
+                    <form onSubmit={e => submitForm(e)} name="contact" method="POST" data-netlify="true" className={styles.form}>
                         <input type="hidden" name="form-name" value="contact" />
                         <p className={styles.formGroup}>
                             <label>Name:</label> <input type="text" name="name" />
