@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import FromBelowEntryDiv from '../fromBelowEntryDiv';
 
-export default function RepoCard({ description, html_url, name, languages_url, homepage }) {
+export default function RepoCard({ description, html_url, name, languages_url, homepage, updated_at }) {
     const [languages, setLanguages] = useState([]);
 
 
@@ -13,7 +13,6 @@ export default function RepoCard({ description, html_url, name, languages_url, h
         const cachedLanguages = localStorage.getItem(`languages_${name}`);
         if (typeof cachedLanguages === 'string' && cachedLanguages.length > 0) {
             setLanguages(JSON.parse(cachedLanguages));
-            console.log(`Loaded cached languages for ${name}`);
             return;
         }
         fetch(languages_url)
@@ -25,9 +24,16 @@ export default function RepoCard({ description, html_url, name, languages_url, h
                 setLanguages(Object.keys(data));
             })
             .catch(err => {
-                console.log(`Error fetching data: ${err}`);
+                console.error(`Error fetching data: ${err}`);
             });
     }, [languages_url, name]);
+
+
+    const lastUpdated = new Date(updated_at).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
 
     return (
         <FromBelowEntryDiv className={styles.card}>
@@ -47,6 +53,7 @@ export default function RepoCard({ description, html_url, name, languages_url, h
                 {homepage && <Link href={homepage} target='_blank'>View Live</Link>}
                 {html_url && <Link href={html_url} target='_blank'>View on GitHub</Link>}
             </div>
+            <p>Last Updated: {lastUpdated}</p>
         </FromBelowEntryDiv>
     )
 }

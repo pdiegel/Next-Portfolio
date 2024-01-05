@@ -12,6 +12,7 @@
     "@svgr/webpack": "^8.1.0",
     "framer-motion": "^10.17.4",
     "next": "14.0.4",
+    "nodemailer": "^6.9.8",
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.5.3",

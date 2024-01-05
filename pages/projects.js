@@ -74,7 +74,6 @@ export default function Projects({ repos }) {
     </FromLeftEntryDiv>)
 
 
-
     return (
         <>
             <Head>

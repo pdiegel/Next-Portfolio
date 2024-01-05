@@ -7,7 +7,6 @@ export default function NavItem({ children, icon, url }) {
     const [open, setOpen] = useState(false);
 
     const linkHandler = () => {
-        console.log(url);
         if (url !== undefined) {
             return <Link href={url ? url : "#"} className="icon-button" target='_blank'>
                 {icon}

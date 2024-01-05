@@ -8,7 +8,7 @@
     text-align: left;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     hyphens: auto;
-    padding: 10px 20px;
+    padding: var(--grouped-margin) 20px;
     margin-bottom: var(--ungrouped-margin);
 }
 
@@ -22,6 +22,12 @@
 
 .card p {
     font-size: 1rem;
+}
+
+.card p:last-of-type {
+    color: #777;
+    margin-top: var(--grouped-margin);
+    margin-bottom: 0;
 }
 
 .cardWrapper {
@@ -54,6 +60,29 @@
     align-items: center;
 }
 
+.cardLinks a {
+    color: var(--background-main);
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 200ms, scale 200ms;
+    border: 1px solid var(--border-color);
+}
+
+.cardLinks a:hover {
+    background-color: rgba(100, 148, 237, 0.9);
+    scale: 1.1;
+}
+
 #loading {
     margin: 0 auto;
+}
+
+@media screen and (min-width: 500px) {
+    .cardLinks {
+        justify-content: flex-start;
+        gap: var(--grouped-margin);
+    }
+
 }

@@ -203,7 +203,8 @@ header .nav-item:last-of-type {
 
 }
 
-.menu-item:hover {
+.menu-item:hover,
+.menu-item.active {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -233,12 +234,11 @@ p {
     gap: 20px;
 }
 
-.home-buttons a,
 .icon-button {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.home-buttons a {
+.primary-button {
     background-color: var(--primary-color);
     border: none;
     padding: 10px 15px;
@@ -246,12 +246,13 @@ p {
     color: var(--background-main);
     cursor: pointer;
     text-decoration: none;
-    transition: opacity 1000ms, box-shadow 100ms;
+    box-shadow: 1px 1px 5px transparent;
+    transition: scale 300ms, box-shadow 300ms;
 }
 
-.home-buttons a:hover {
-    opacity: 0.7;
+.primary-button:hover {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    scale: 1.1;
 }
 
 main ul {
@@ -275,6 +276,30 @@ footer p {
 
 .selection-box label {
     margin-right: 10px;
+}
+
+label,
+select,
+input,
+textarea {
+    padding: 5px;
+}
+
+select,
+input,
+textarea {
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 300ms;
+}
+
+label {
+    font-weight: bold;
+}
+
+select:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 @media screen and (min-width: 500px) {
