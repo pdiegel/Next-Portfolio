@@ -8,7 +8,7 @@ export default function handler(req, res) {
         })
         .catch(e => {
             console.log(e)
-            return res.status(400)
+            return res.status(400).json({ error: e })
         });
 
 }
