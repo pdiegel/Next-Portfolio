@@ -92,15 +92,26 @@ export default function Projects({ repos }) {
 export async function getStaticProps() {
     // Fetch repos from GitHub, using static props to avoid rate limiting.
     // We only need to update the repos every hour, so this is fine.
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const res = await fetch(`${baseUrl}/repos`);
-    const repos = await res.json();
+    try {
+        const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+        const res = await fetch(`${baseUrl}/repos`);
+        const repos = await res.json();
 
-    return {
-        props: {
-            repos,
-        },
-        // Revalidate every hour (3600 seconds)
-        revalidate: 3600,
+        return {
+            props: {
+                repos,
+            },
+            // Revalidate every hour (3600 seconds)
+            revalidate: 3600,
+        }
+    } catch (e) {
+        console.error("Error fetching repos:", e);
+        return {
+            props: {
+                repos: [],
+            },
+            // Revalidate every hour (3600 seconds)
+            revalidate: 3600,
+        }
     }
 }
