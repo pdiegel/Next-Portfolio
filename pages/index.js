@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import PortraitImg from '@/public/portrait.jpg'
+import PortraitImg from '@/public/philip.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import FromBelowEntryDiv from '@/components/fromBelowEntryDiv'
