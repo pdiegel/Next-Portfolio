@@ -1,40 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next-Portfolio
+
+## Overview
+
+Welcome to "Next-Portfolio", a dynamic and professionally crafted portfolio website. Built using Next.js, this portfolio showcases real-time GitHub repository integration and up-to-date resume details. The intuitive layout includes dedicated sections for projects, about, and contact information, ensuring a seamless user experience.
+
+Check out the live site here: [Next-Portfolio](https://next-portfolio-kappa-rust.vercel.app/)
+
+## Features
+
+- **Real-Time GitHub Repositories:** Dynamically fetches and displays public GitHub repositories, including the programming languages used in each.
+- **Resume Integration:** Up-to-date professional resume details are highlighted.
+- **Responsive Design:** Fully responsive layout, ensuring a great experience on all device sizes.
+- **Intuitive Navigation:** Includes Home, About, Projects, and Contact sections for easy navigation.
+
+## Built With
+
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
 
 ## Getting Started
 
-First, run the development server:
+To set up the project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    ```sh
+    git clone https://github.com/pdiegel/Next-Portfolio.git
+    ```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. Navigate to the project directory:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+    ```sh
+    cd Next-Portfolio
+    ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. Install NPM packages:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    ```sh
+    npm install
+    ```
 
-## Learn More
+4. Run the development server:
 
-To learn more about Next.js, take a look at the following resources:
+    ```sh
+    npm run dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Visit <http://localhost:3000> to view the project locally.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome and appreciated. If you have suggestions or improvements, please fork the repository and create a pull request, or open an issue with the tag "enhancement".
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Distributed under the MIT License. See LICENSE for more information.
+
+## Contact
+
+Philip Diegel - <philipdiegel@gmail.com>
+
+Project Link: <https://github.com/pdiegel/Next-Portfolio>
