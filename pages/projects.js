@@ -15,13 +15,14 @@ export default function Projects({ repos }) {
         // Making a copy, because React doesn't behave well when you mutate state directly
         const sortedRepos = [...repos];
 
+        console.log(sortedRepos)
         if (sortType === 'date') {
             if (sortDirection === 'desc') {
                 console.log('sorting by date desc');
-                return sortedRepos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+                return sortedRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
             } else {
                 console.log('sorting by date asc');
-                return sortedRepos.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+                return sortedRepos.sort((a, b) => new Date(a.updated_at) - new Date(b.updated_at));
             }
         } else {
             if (sortDirection === 'desc') {
