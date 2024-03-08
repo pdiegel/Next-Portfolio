@@ -58,8 +58,7 @@ h2 {
 
 h2,
 h3,
-p,
-li {
+p {
     margin-bottom: var(--grouped-margin);
 }
 
@@ -86,42 +85,24 @@ main {
 
 header,
 footer {
-    padding: 1rem;
+    padding: 15px;
     background-color: var(--banner-color);
+    height: min-content;
 }
 
-header {
-    box-shadow: inset 0 -1px var(--border-color);
-    height: var(--header-height);
-    z-index: 5;
-}
-
-header div,
-header nav ul {
+.headerItems {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
+.headerItems h1 {
+    margin: 0;
+}
 
-nav,
-header nav ul {
+.nav-item {
     list-style: none;
-    width: 100%;
-}
-
-header nav a {
-    text-decoration: none;
-    transition: color 200ms;
-}
-
-header nav a:hover {
-    color: rgba(0, 0, 0, 0.8);
-}
-
-.navbar-nav {
-    justify-content: center;
+    position: relative;
 }
 
 .icon-button,
@@ -138,74 +119,44 @@ header nav a:hover {
     border: none;
 }
 
-svg {
+.nav-item svg {
     height: 20px;
     width: 20px;
 }
 
-.nav-item {
-    position: relative;
+.dropdown {
+    position: absolute;
+    top: 50px;
+    left: -80px;
     display: flex;
-    text-align: center;
-    margin: 0 10px;
-}
-
-.nav-item:hover,
-.nav-item button:hover {
-    cursor: pointer;
-}
-
-.nav-item:hover > .icon-button > svg > path {
-    fill: var(--primary-color);
-}
-
-.nav-item > .icon-button {
-    transition: scale 200ms;
-}
-
-.nav-item:hover > .icon-button {
-    scale: 1.1;
-}
-
-.icon-button svg path {
-    fill: #333;
-    transition: fill 300ms;
-}
-
-.nav-item .dropdown {
-    position: fixed;
-    left: 5px;
-    top: 60px;
+    flex-direction: column;
     background-color: var(--banner-color);
-    border-radius: 10px;
-    padding: 0.5rem;
-    width: 200px;
-    transition: left 500ms ease;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-    z-index: 10;
-}
-
-header .nav-item:last-of-type {
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin: 10px;
-}
-
-.menu-item {
-    display: flex;
-    width: 100%;
-    height: 50px;
-    align-items: center;
+    padding: 10px;
     border-radius: 5px;
-    transition: background-color 300ms;
-    padding: 0 1rem;
-
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.menu-item:hover,
-.menu-item.active {
-    background-color: rgba(0, 0, 0, 0.05);
+.dropdown a,
+.navLinks a {
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.dropdown a {
+    padding: 15px 20px;
+}
+
+.dropdown a.active,
+.navLinks a.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navLinks a {
+    padding: 5px 10px;
+}
+
+.navLinks {
+    display: none;
 }
 
 .icon-right {
@@ -307,55 +258,15 @@ select:hover {
     max-width: 100%;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 700px) {
 
-    h1 {
-        text-wrap: nowrap;
-        margin: 0;
-    }
-
-    header {
-        height: auto;
-    }
-
-    header .wrapper {
-        max-width: 100%;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-    }
-
-    header nav ul {
-        width: fit-content;
-    }
-
-    .navbar {
+    .navLinks {
         display: flex;
-        justify-content: flex-end;
+        gap: 20px;
     }
 
-    header .nav-item:last-of-type {
-        position: relative;
-        margin: 0 0 0 10px;
-    }
-
-    .nav-item .dropdown {
-        position: absolute;
-        top: 53px;
-        left: -175px;
-        border-radius: 0 0 5px 5px;
-        border-top: none;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-        border: 1px solid var(--border-color);
-        border-top: none;
-    }
-
-    main,
-    .content {
-        text-align: left;
-    }
-
-    .home-buttons {
-        justify-content: flex-start;
+    .hamburgerMenu {
+        display: none;
     }
 
 
