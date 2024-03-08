@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header>
       <FromLeftEntryDiv className="headerItems">
-        <h1>Philip Diegel</h1>
+        <h2>Philip Diegel</h2>
         <Nav>
           {/* <NavItem icon={<EmailIcon />} url="mailto:philipdiegel@gmail.com" />
                     <NavItem icon={<GitHubIcon />} url="https://github.com/pdiegel" />

@@ -22,7 +22,6 @@ html {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-    color: var(--font-color-main);
 }
 
 .container {
@@ -47,19 +46,12 @@ body {
 }
 
 h1 {
-    letter-spacing: -2px;
-    margin: 0 auto 10px;
+    letter-spacing: -1px;
 }
 
 h2 {
     letter-spacing: -2px;
     font-size: 2.5rem;
-}
-
-h2,
-h3,
-p {
-    margin-bottom: var(--grouped-margin);
 }
 
 h3 {
@@ -79,8 +71,10 @@ select {
     font-size: 1.15rem;
 }
 
-main {
-    padding: var(--ungrouped-margin) 20px;
+a,
+p {
+    text-decoration: none;
+    color: black;
 }
 
 header,
@@ -159,16 +153,32 @@ footer {
     display: none;
 }
 
-.icon-right {
-    margin-left: auto;
+.hero {
+    background-color: black;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.portrait {
-    border-radius: 10px;
-    height: 150px;
-    width: auto;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: var(--grouped-margin);
+.heroText {
+    gap: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.heroText h1 {
+    font-size: 40px;
+}
+
+.heroText p {
+    font-size: 12px;
+    color: white;
+}
+
+.icon-right {
+    margin-left: auto;
 }
 
 p {
@@ -181,29 +191,51 @@ p {
 
 .home-buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .icon-button {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.primary-button {
+.primary-button,
+.secondary-button {
     background-color: var(--primary-color);
     border: none;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 100px;
     color: var(--background-main);
     cursor: pointer;
     text-decoration: none;
     box-shadow: 1px 1px 5px transparent;
-    transition: scale 300ms, box-shadow 300ms;
+    transition: box-shadow 300ms, background-color 300ms, color 300ms;
+}
+
+.secondary-button {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 .primary-button:hover {
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-    scale: 1.1;
+    background-color: var(--background-main);
+    color: var(--primary-color);
+
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-main);
+}
+
+.portrait {
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
 }
 
 main ul {
