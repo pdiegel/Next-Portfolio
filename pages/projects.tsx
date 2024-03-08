@@ -6,7 +6,7 @@ import SelectionBox from "@/components/selectionbox";
 import FromLeftEntryDiv from "@/components/fromLeftEntryDiv";
 import { Repo, Repos } from "@/interfaces/repos";
 
-export default function Projects({ repos }) {
+export default function Projects({ repos }: { repos: Repos }) {
   const [fetchedRepos, setRepos] = useState(repos);
   const [sortType, setSortType] = useState("date");
   const [sortDirection, setSortDirection] = useState("desc");
@@ -104,9 +104,11 @@ export async function getStaticProps() {
   // Fetch repos from GitHub, using static props to avoid rate limiting.
   // We only need to update the repos every hour, so this is fine.
   try {
+    console.log("Fetching repos...");
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
     const res = await fetch(`${baseUrl}/repos`);
     const repos = await res.json();
+    console.log("Fetched repos successfully!");
 
     return {
       props: {

@@ -8,7 +8,7 @@ export default function FromBelowEntryDiv({
   children,
 }: {
   isVisibleInitially?: boolean;
-  className: string;
+  className?: string;
   children?: React.ReactNode;
 }) {
   const control = useAnimation();
