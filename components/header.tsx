@@ -3,17 +3,17 @@ import NavItem from "./navitem";
 import DropDownIcon from "@/public/dropdown.svg";
 import DropDownMenu from "./dropdownmenu";
 import FromLeftEntryDiv from "./fromLeftEntryDiv";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header>
       <FromLeftEntryDiv className="headerItems">
-        <h2>Philip Diegel</h2>
+        <Link className="logoLink" href="/">
+          {" "}
+          <h2>Philip Diegel</h2>
+        </Link>
         <Nav>
-          {/* <NavItem icon={<EmailIcon />} url="mailto:philipdiegel@gmail.com" />
-                    <NavItem icon={<GitHubIcon />} url="https://github.com/pdiegel" />
-                    <NavItem icon={<LinkedInIcon />} url="https://www.linkedin.com/in/philip-diegel" /> */}
-
           <div className="hamburgerMenu">
             <NavItem icon={<DropDownIcon />}>
               {/* Dropdown goes here */}

@@ -1,5 +1,5 @@
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 :root {
@@ -51,7 +51,7 @@ h1 {
 
 h2 {
     letter-spacing: -2px;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
 }
 
 h3 {
@@ -74,14 +74,17 @@ select {
 a,
 p {
     text-decoration: none;
-    color: black;
+    color: var(--font-color-main);
+}
+
+p {
+    max-width: 50ch;
 }
 
 header,
 footer {
     padding: 15px;
     background-color: var(--banner-color);
-    height: min-content;
 }
 
 .headerItems {
@@ -99,7 +102,7 @@ footer {
     position: relative;
 }
 
-.icon-button,
+
 .nav-item button {
     background-color: var(--icon-color);
     padding: 10px;
@@ -113,7 +116,7 @@ footer {
     border: none;
 }
 
-.nav-item svg {
+header svg {
     height: 20px;
     width: 20px;
 }
@@ -134,6 +137,7 @@ footer {
 .navLinks a {
     text-decoration: none;
     border-radius: 5px;
+    transition: color 300ms, background-color 300ms;
 }
 
 .dropdown a {
@@ -153,35 +157,45 @@ footer {
     display: none;
 }
 
-.hero {
+.logoLink {
+    text-decoration: none;
+    color: var(--font-color-main);
+    transition: 100ms color;
+}
+
+.logoLink:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.darkSection {
     background-color: black;
+    color: #eee;
+}
+
+.darkSection p,
+.darkSection h1,
+.darkSection h2 {
+    color: #eee;
+}
+
+.sectionText,
+.aboutText,
+.sectionContents {
+    gap: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
-.heroText {
-    gap: 10px;
-    color: white;
-    display: flex;
-    flex-direction: column;
+.sectionText h1 {
+    font-size: 3em;
 }
 
-.heroText h1 {
-    font-size: 40px;
-}
-
-.heroText p {
-    font-size: 16px;
-    color: white;
+.sectionText p {
+    font-size: 1em;
 }
 
 .icon-right {
     margin-left: auto;
-}
-
-p {
-    max-width: 50ch;
 }
 
 .introduction {
@@ -194,7 +208,16 @@ p {
 }
 
 .icon-button {
+    height: 40px;
+    width: 40px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .primary-button,
@@ -233,35 +256,27 @@ p {
 
 main img {
     border-radius: 10px;
-    height: auto;
     width: 100%;
+    height: auto;
+    max-width: 300px;
 }
 
 main ul {
     padding-left: var(--grouped-margin);
 }
 
-footer {
-    text-align: center;
-    background-color: black;
-}
-
-footer p {
-    margin-bottom: 0;
-    color: white;
-    font-size: 14px;
-}
-
 section {
     display: flex;
+    gap: 10px;
+    flex-direction: column;
     padding: 20px 15px;
-
 }
 
-section,
-.aboutSection {
-    display: flex;
-    gap: 10px;
+.reverseRow {
+    flex-direction: row-reverse;
+}
+
+.column {
     flex-direction: column;
 }
 
@@ -304,30 +319,89 @@ select:hover {
     max-width: 100%;
 }
 
-@media screen and (min-width: 700px) {
+footer {
+    text-align: center;
+    background-color: black;
+}
+
+footer p {
+    color: #eee;
+}
+
+footer svg {
+    height: 30px;
+    width: 30px;
+}
+
+.footerItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footerIcons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footerIcons a {
+    transition: background-color 300ms, color 300ms;
+}
+
+@media screen and (min-width: 765px) {
+    html {
+        font-size: 24px;
+    }
 
     .navLinks {
         display: flex;
-        gap: 20px;
+    }
+
+    .navLinks a.active {
+        background-color: var(--primary-color);
+        color: var(--background-main);
+    }
+
+    .navLinks a:hover,
+    .footerIcons a:hover {
+        background-color: var(--primary-color);
+        color: var(--background-main);
     }
 
     .hamburgerMenu {
         display: none;
     }
 
+    section {
+        padding: 40px 30px;
+    }
 
+    .sectionContents {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sectionContents,
+    .sectionText,
+    .home-buttons,
+    .navLinks {
+        gap: 20px;
+    }
+
+    .reverseRow {
+        flex-direction: row-reverse;
+
+    }
+
+    main img {
+        min-width: 250px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
-
-    header .wrapper,
-    .wrapper {
-        max-width: 1000px;
+    .headerItems {
+        max-width: 1200px;
+        margin: 0 auto;
     }
-
-    .wrapper {
-        width: 100%;
-    }
-
-
 }
