@@ -16,7 +16,7 @@ export default function SelectionBox({
   children: React.ReactNode;
 }) {
   return (
-    <div className="selection-box">
+    <div>
       <label htmlFor={name}>{label}</label>
       <select name={name} id={name} onChange={(e) => onChange(e)} value={value}>
         {children}

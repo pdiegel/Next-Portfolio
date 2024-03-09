@@ -55,11 +55,11 @@ export default function RepoCard({
 
   return (
     <FromBelowEntryDiv className={styles.card}>
-      <h3>{name}</h3>
+      <h2>{name}</h2>
       <p>{description}</p>
 
       <h3>Languages Used:</h3>
-      <p>
+      <div className={styles.languageIcons}>
         {languages &&
           languages.map((value, index) => {
             if (value in languageIconMap) {
@@ -76,7 +76,7 @@ export default function RepoCard({
             }
             return <span key={index}>{value}, </span>;
           })}
-      </p>
+      </div>
       <div className={styles.cardLinks}>
         {homepage && (
           <Link href={homepage} target="_blank">

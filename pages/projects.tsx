@@ -59,31 +59,41 @@ export default function Projects({ repos }: { repos: Repos }) {
   });
 
   const validRepoContents = (
-    <FromLeftEntryDiv className="wrapper">
-      <h2 className={styles.heading}>My Projects</h2>
+    <>
+      <section className="darkSection">
+        <div className="wrapper">
+          <h1 className={styles.heading}>My Projects</h1>
+        </div>
+      </section>
 
-      <SelectionBox
-        onChange={(e) => setSortType(e.target.value)}
-        name="sortType"
-        label="Sort by:"
-        value={sortType}
-      >
-        <option value="date">Date</option>
-        <option value="name">Name</option>
-      </SelectionBox>
+      <section>
+        <div className="wrapper sectionText">
+          <div className={styles.sortSelectors}>
+            <SelectionBox
+              onChange={(e) => setSortType(e.target.value)}
+              name="sortType"
+              label="Sort by:"
+              value={sortType}
+            >
+              <option value="date">Date</option>
+              <option value="name">Name</option>
+            </SelectionBox>
 
-      <SelectionBox
-        onChange={(e) => setSortDirection(e.target.value)}
-        name="sortDirection"
-        label="Direction:"
-        value={sortDirection}
-      >
-        <option value="desc">Descending</option>
-        <option value="asc">Ascending</option>
-      </SelectionBox>
+            <SelectionBox
+              onChange={(e) => setSortDirection(e.target.value)}
+              name="sortDirection"
+              label="Direction:"
+              value={sortDirection}
+            >
+              <option value="desc">Descending</option>
+              <option value="asc">Ascending</option>
+            </SelectionBox>
+          </div>
 
-      <div className={styles.cardWrapper}>{repos && repoCards}</div>
-    </FromLeftEntryDiv>
+          <div className={styles.cardWrapper}>{repos && repoCards}</div>
+        </div>
+      </section>
+    </>
   );
 
   return (
