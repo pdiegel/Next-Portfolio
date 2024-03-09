@@ -38,7 +38,7 @@ export default function Home() {
         <section>
           <div className="sectionContents reverseRow wrapper column">
             <FromBelowEntryDiv className="sectionText">
-              <h2>About me</h2>
+              <h2>About Me</h2>
               <p>
                 Originally from Nokomis, Florida, my lifelong enthusiasm for
                 video games has steered me towards a career in computer
