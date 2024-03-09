@@ -190,7 +190,8 @@ section h1 {
     flex-direction: column;
 }
 
-.sectionText p {
+.sectionText p,
+.sectionText a {
     font-size: 1em;
 }
 
@@ -208,8 +209,8 @@ section h1 {
 }
 
 .icon-button {
-    height: 40px;
-    width: 40px;
+    height: 2em;
+    width: 2em;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
     background-color: white;
     border: none;
@@ -323,8 +324,8 @@ footer p {
 }
 
 footer svg {
-    height: 30px;
-    width: 30px;
+    height: 1.5em;
+    width: 1.5em;
 }
 
 .footerItems {

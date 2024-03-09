@@ -62,7 +62,9 @@ export default function Projects({ repos }: { repos: Repos }) {
     <>
       <section className="darkSection">
         <div className="wrapper">
-          <h1 className={styles.heading}>My Projects</h1>
+          <FromLeftEntryDiv>
+            <h1 className={styles.heading}>My Projects</h1>
+          </FromLeftEntryDiv>
         </div>
       </section>
 
