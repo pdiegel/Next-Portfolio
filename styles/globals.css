@@ -1,5 +1,5 @@
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 :root {
@@ -22,7 +22,6 @@ html {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-    color: var(--font-color-main);
 }
 
 .container {
@@ -47,20 +46,12 @@ body {
 }
 
 h1 {
-    letter-spacing: -2px;
-    margin: 0 auto 10px;
+    letter-spacing: -1px;
 }
 
 h2 {
     letter-spacing: -2px;
-    font-size: 2.5rem;
-}
-
-h2,
-h3,
-p,
-li {
-    margin-bottom: var(--grouped-margin);
+    font-size: 2.25rem;
 }
 
 h3 {
@@ -80,51 +71,38 @@ select {
     font-size: 1.15rem;
 }
 
-main {
-    padding: var(--ungrouped-margin) 20px;
+a,
+p {
+    text-decoration: none;
+    color: var(--font-color-main);
+}
+
+p {
+    max-width: 50ch;
 }
 
 header,
 footer {
-    padding: 1rem;
+    padding: 15px;
     background-color: var(--banner-color);
 }
 
-header {
-    box-shadow: inset 0 -1px var(--border-color);
-    height: var(--header-height);
-    z-index: 5;
-}
-
-header div,
-header nav ul {
+.headerItems {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
+.headerItems h1 {
+    margin: 0;
+}
 
-nav,
-header nav ul {
+.nav-item {
     list-style: none;
-    width: 100%;
+    position: relative;
 }
 
-header nav a {
-    text-decoration: none;
-    transition: color 200ms;
-}
 
-header nav a:hover {
-    color: rgba(0, 0, 0, 0.8);
-}
-
-.navbar-nav {
-    justify-content: center;
-}
-
-.icon-button,
 .nav-item button {
     background-color: var(--icon-color);
     padding: 10px;
@@ -138,90 +116,86 @@ header nav a:hover {
     border: none;
 }
 
-svg {
+header svg {
     height: 20px;
     width: 20px;
 }
 
-.nav-item {
-    position: relative;
+.dropdown {
+    position: absolute;
+    top: 50px;
+    left: -80px;
     display: flex;
-    text-align: center;
-    margin: 0 10px;
-}
-
-.nav-item:hover,
-.nav-item button:hover {
-    cursor: pointer;
-}
-
-.nav-item:hover > .icon-button > svg > path {
-    fill: var(--primary-color);
-}
-
-.nav-item > .icon-button {
-    transition: scale 200ms;
-}
-
-.nav-item:hover > .icon-button {
-    scale: 1.1;
-}
-
-.icon-button svg path {
-    fill: #333;
-    transition: fill 300ms;
-}
-
-.nav-item .dropdown {
-    position: fixed;
-    left: 5px;
-    top: 60px;
+    flex-direction: column;
     background-color: var(--banner-color);
-    border-radius: 10px;
-    padding: 0.5rem;
-    width: 200px;
-    transition: left 500ms ease;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-    z-index: 10;
-}
-
-header .nav-item:last-of-type {
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin: 10px;
-}
-
-.menu-item {
-    display: flex;
-    width: 100%;
-    height: 50px;
-    align-items: center;
+    padding: 10px;
     border-radius: 5px;
-    transition: background-color 300ms;
-    padding: 0 1rem;
-
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.menu-item:hover,
-.menu-item.active {
-    background-color: rgba(0, 0, 0, 0.05);
+.dropdown a,
+.navLinks a {
+    text-decoration: none;
+    border-radius: 5px;
+    transition: color 300ms, background-color 300ms;
+}
+
+.dropdown a {
+    padding: 15px 20px;
+}
+
+.dropdown a.active,
+.navLinks a.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navLinks a {
+    padding: 5px 10px;
+}
+
+.navLinks {
+    display: none;
+}
+
+.logoLink {
+    text-decoration: none;
+    color: var(--font-color-main);
+    transition: 100ms color;
+}
+
+.logoLink:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.darkSection {
+    background-color: black;
+    color: #eee;
+}
+
+.darkSection p,
+.darkSection h1,
+.darkSection h2 {
+    color: #eee;
+}
+
+.sectionText,
+.aboutText,
+.sectionContents {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionText h1 {
+    font-size: 3em;
+}
+
+.sectionText p {
+    font-size: 1em;
 }
 
 .icon-right {
     margin-left: auto;
-}
-
-.portrait {
-    border-radius: 10px;
-    height: 150px;
-    width: auto;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: var(--grouped-margin);
-}
-
-p {
-    max-width: 50ch;
 }
 
 .introduction {
@@ -230,42 +204,80 @@ p {
 
 .home-buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .icon-button {
+    height: 40px;
+    width: 40px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
 }
 
-.primary-button {
+.primary-button,
+.secondary-button {
     background-color: var(--primary-color);
     border: none;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 100px;
     color: var(--background-main);
     cursor: pointer;
     text-decoration: none;
     box-shadow: 1px 1px 5px transparent;
-    transition: scale 300ms, box-shadow 300ms;
+    transition: box-shadow 300ms, background-color 300ms, color 300ms;
+}
+
+.secondary-button {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 .primary-button:hover {
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-    scale: 1.1;
+    background-color: var(--background-main);
+    color: var(--primary-color);
+
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-main);
+}
+
+main img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
 }
 
 main ul {
     padding-left: var(--grouped-margin);
 }
 
-footer {
-    text-align: center;
-    box-shadow: inset 0 1px var(--border-color);
+section {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 20px 15px;
 }
 
-footer p {
-    margin-bottom: 0;
+.reverseRow {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
 }
 
 .selection-box {
@@ -307,70 +319,89 @@ select:hover {
     max-width: 100%;
 }
 
-@media screen and (min-width: 500px) {
+footer {
+    text-align: center;
+    background-color: black;
+}
 
-    h1 {
-        text-wrap: nowrap;
-        margin: 0;
+footer p {
+    color: #eee;
+}
+
+footer svg {
+    height: 30px;
+    width: 30px;
+}
+
+.footerItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footerIcons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footerIcons a {
+    transition: background-color 300ms, color 300ms;
+}
+
+@media screen and (min-width: 765px) {
+    html {
+        font-size: 24px;
     }
 
-    header {
-        height: auto;
-    }
-
-    header .wrapper {
-        max-width: 100%;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-    }
-
-    header nav ul {
-        width: fit-content;
-    }
-
-    .navbar {
+    .navLinks {
         display: flex;
-        justify-content: flex-end;
     }
 
-    header .nav-item:last-of-type {
-        position: relative;
-        margin: 0 0 0 10px;
+    .navLinks a.active {
+        background-color: var(--primary-color);
+        color: var(--background-main);
     }
 
-    .nav-item .dropdown {
-        position: absolute;
-        top: 53px;
-        left: -175px;
-        border-radius: 0 0 5px 5px;
-        border-top: none;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-        border: 1px solid var(--border-color);
-        border-top: none;
+    .navLinks a:hover,
+    .footerIcons a:hover {
+        background-color: var(--primary-color);
+        color: var(--background-main);
     }
 
-    main,
-    .content {
-        text-align: left;
+    .hamburgerMenu {
+        display: none;
     }
 
-    .home-buttons {
-        justify-content: flex-start;
+    section {
+        padding: 40px 30px;
     }
 
+    .sectionContents {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    .sectionContents,
+    .sectionText,
+    .home-buttons,
+    .navLinks {
+        gap: 20px;
+    }
+
+    .reverseRow {
+        flex-direction: row-reverse;
+
+    }
+
+    main img {
+        min-width: 250px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
-
-    header .wrapper,
-    .wrapper {
-        max-width: 1000px;
+    .headerItems {
+        max-width: 1200px;
+        margin: 0 auto;
     }
-
-    .wrapper {
-        width: 100%;
-    }
-
-
 }

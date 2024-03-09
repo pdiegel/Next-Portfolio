@@ -27,7 +27,7 @@ export default function NavItem({
         <button className="icon-button" onClick={() => setOpen(!open)}>
           {open ? <CloseIcon /> : icon}
         </button>
-        {hamburgerMenu()}
+        {open && hamburgerMenu()}
       </>
     );
   };
