@@ -1,5 +1,6 @@
 import Head from "next/head";
 import PortraitImg from "@/public/philip.jpg";
+import AboutImg from "@/public/programming.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import FromBelowEntryDiv from "@/components/fromBelowEntryDiv";
@@ -12,7 +13,7 @@ export default function Home() {
         <title>Philip Diegel - Portfolio</title>
       </Head>
       <main>
-        <div className="hero">
+        <section className="hero">
           <FromBelowEntryDiv className="heroText">
             <h1>Hi, I&apos;m Philip!</h1>
 
@@ -31,7 +32,26 @@ export default function Home() {
             </div>
           </FromBelowEntryDiv>
           <Image className="portrait" src={PortraitImg} alt="Portrait" />
-        </div>
+        </section>
+        <section>
+          <FromBelowEntryDiv className="aboutSection">
+            <h2>About me</h2>
+            <p>
+              Originally from Nokomis, Florida, my lifelong enthusiasm for video
+              games has steered me towards a career in computer programming.
+              <br />
+              With a strong foundation in Python and recent advancements in
+              learning JavaScript, React.js, and Next.js, I am eagerly embracing
+              the challenges and opportunities in the programming landscape.
+            </p>
+            <div className="home-buttons">
+              <Link className="primary-button" href="/projects">
+                Download my Resume
+              </Link>
+            </div>
+          </FromBelowEntryDiv>
+          <Image src={AboutImg} alt="Programming" />
+        </section>
       </main>
     </>
   );
