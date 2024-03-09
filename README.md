@@ -2,16 +2,16 @@
 
 ## Overview
 
-Welcome to "Next-Portfolio", a dynamic and professionally crafted portfolio website. Built using Next.js, this portfolio showcases real-time GitHub repository integration and up-to-date resume details. The intuitive layout includes dedicated sections for projects, about, and contact information, ensuring a seamless user experience.
+Welcome to "Next-Portfolio", a dynamic and professionally crafted portfolio website. Built using Next.js, this portfolio showcases real-time GitHub repository integration and up-to-date resume details. The intuitive layout includes dedicated sections for projects and contact information.
 
 Check out the live site here: [Next-Portfolio](https://next-portfolio-kappa-rust.vercel.app/)
 
 ## Features
 
-- **Real-Time GitHub Repositories:** Dynamically fetches and displays public GitHub repositories, including the programming languages used in each.
-- **Resume Integration:** Up-to-date professional resume details are highlighted.
+- **Real-Time GitHub Repositories:** Dynamically fetches and displays my public GitHub repositories, including the programming languages used in each.
+- **Resume Integration:** Up-to-date resume is available for download on the home page.
 - **Responsive Design:** Fully responsive layout, ensuring a great experience on all device sizes.
-- **Intuitive Navigation:** Includes Home, About, Projects, and Contact sections for easy navigation.
+- **Intuitive Navigation:** Includes Home, Projects, and Contact sections for easy navigation.
 
 ## Built With
 
