@@ -2,37 +2,41 @@
     text-align: left;
 }
 
+.sortSelectors {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
 .card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     background-color: var(--banner-color);
     border-radius: calc(var(--border-radius) / 2);
     text-align: left;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     hyphens: auto;
     padding: var(--grouped-margin) 20px;
-    margin-bottom: var(--ungrouped-margin);
 }
 
-.card:last-of-type {
-    margin-bottom: 0;
-}
-
-.card h3 {
+.card h2 {
     word-break: break-all;
 }
 
 .card p {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 .card p:last-of-type {
     color: #777;
-    margin-top: var(--grouped-margin);
-    margin-bottom: 0;
 }
 
 .cardWrapper {
     display: flex;
     flex-direction: column;
+    gap: 50px;
 }
 
 #sortType,
@@ -40,39 +44,45 @@
     width: 100%;
     height: 40px;
     border-radius: 5px;
-    border: 1px solid #ccc;
     padding: 5px;
     font-size: 16px;
 }
 
 .languageIcon {
-    margin-right: 5px;
+    height: 3em;
+    width: auto;
+    border-radius: 5px;
 }
 
-.languageIcon:last-of-type {
-    margin-right: 0;
+.languageIcons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .cardLinks {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .cardLinks a {
     color: var(--background-main);
     background-color: var(--primary-color);
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 100px;
     text-decoration: none;
-    transition: background-color 200ms, scale 200ms;
-    border: 1px solid var(--border-color);
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 5px transparent;
+    transition: background-color 200ms, color 200ms, border 200ms, box-shadow 200ms;
 }
 
 .cardLinks a:hover {
-    background-color: rgba(100, 148, 237, 0.9);
-    scale: 1.1;
+    background-color: var(--banner-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 #loading {
@@ -80,9 +90,12 @@
 }
 
 @media screen and (min-width: 500px) {
-    .cardLinks {
-        justify-content: flex-start;
-        gap: var(--grouped-margin);
+
+    .cardLinks,
+    .sortSelectors,
+    .card,
+    .languageIcons {
+        gap: 20px;
     }
 
 }

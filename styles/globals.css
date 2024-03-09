@@ -167,6 +167,10 @@ header svg {
     color: rgba(0, 0, 0, 0.6);
 }
 
+section h1 {
+    font-size: 3em;
+}
+
 .darkSection {
     background-color: black;
     color: #eee;
@@ -184,10 +188,6 @@ header svg {
     gap: 10px;
     display: flex;
     flex-direction: column;
-}
-
-.sectionText h1 {
-    font-size: 3em;
 }
 
 .sectionText p {
@@ -230,7 +230,11 @@ header svg {
     cursor: pointer;
     text-decoration: none;
     box-shadow: 1px 1px 5px transparent;
-    transition: box-shadow 300ms, background-color 300ms, color 300ms;
+    transition: box-shadow 300ms, background-color 300ms, color 300ms, border 300ms;
+}
+
+.primary-button {
+    border: 1px solid transparent;
 }
 
 .secondary-button {
@@ -246,7 +250,7 @@ header svg {
 .primary-button:hover {
     background-color: var(--background-main);
     color: var(--primary-color);
-
+    border: 1px solid var(--primary-color);
 }
 
 .secondary-button:hover {
@@ -278,16 +282,6 @@ section {
 
 .column {
     flex-direction: column;
-}
-
-.selection-box {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: var(--grouped-margin);
-}
-
-.selection-box label {
-    margin-right: 10px;
 }
 
 label,
@@ -346,7 +340,7 @@ footer svg {
 }
 
 .footerIcons a {
-    transition: background-color 300ms, color 300ms;
+    transition: scale 200ms;
 }
 
 @media screen and (min-width: 765px) {
@@ -363,10 +357,13 @@ footer svg {
         color: var(--background-main);
     }
 
-    .navLinks a:hover,
-    .footerIcons a:hover {
+    .navLinks a:hover {
         background-color: var(--primary-color);
         color: var(--background-main);
+    }
+
+    .footerIcons a:hover {
+        scale: 1.2;
     }
 
     .hamburgerMenu {
@@ -392,10 +389,6 @@ footer svg {
     .reverseRow {
         flex-direction: row-reverse;
 
-    }
-
-    main img {
-        min-width: 250px;
     }
 }
 
