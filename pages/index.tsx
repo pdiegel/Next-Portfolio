@@ -45,9 +45,13 @@ export default function Home() {
               the challenges and opportunities in the programming landscape.
             </p>
             <div className="home-buttons">
-              <Link className="primary-button" href="/projects">
+              <a
+                className="primary-button"
+                href="/Resume.pdf"
+                download="resume-philip-diegel"
+              >
                 Download my Resume
-              </Link>
+              </a>
             </div>
           </FromBelowEntryDiv>
           <Image src={AboutImg} alt="Programming" />
