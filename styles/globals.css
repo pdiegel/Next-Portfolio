@@ -78,7 +78,7 @@ p {
 }
 
 p {
-    max-width: 50ch;
+    max-width: 60ch;
 }
 
 header,
@@ -124,7 +124,8 @@ header svg {
 .dropdown {
     position: absolute;
     top: 50px;
-    left: -80px;
+    left: -180px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     background-color: var(--banner-color);
@@ -182,17 +183,11 @@ section h1 {
     color: #eee;
 }
 
-.sectionText,
 .aboutText,
 .sectionContents {
     gap: 10px;
     display: flex;
     flex-direction: column;
-}
-
-.sectionText p,
-.sectionText a {
-    font-size: 1em;
 }
 
 .icon-right {
@@ -257,13 +252,6 @@ section h1 {
 .secondary-button:hover {
     background-color: var(--primary-color);
     color: var(--background-main);
-}
-
-main img {
-    border-radius: 10px;
-    width: 100%;
-    height: auto;
-    max-width: 300px;
 }
 
 main ul {
@@ -345,9 +333,6 @@ footer svg {
 }
 
 @media screen and (min-width: 765px) {
-    html {
-        font-size: 24px;
-    }
 
     .navLinks {
         display: flex;
@@ -381,7 +366,6 @@ footer svg {
     }
 
     .sectionContents,
-    .sectionText,
     .home-buttons,
     .navLinks {
         gap: 20px;

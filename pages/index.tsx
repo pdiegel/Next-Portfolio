@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FromBelowEntryDiv from "@/components/fromBelowEntryDiv";
 import React from "react";
+import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -14,16 +15,18 @@ export default function Home() {
       </Head>
       <main>
         <section className="darkSection">
-          <div className="sectionContents wrapper column">
-            <FromBelowEntryDiv className="sectionText">
-              <h1>Hi, I&apos;m Philip!</h1>
+          <div className={`${styles.sectionContents} wrapper column`}>
+            <FromBelowEntryDiv className={styles.columnFlexSection}>
+              <div className={styles.sectionText}>
+                <h1>Hi, I&apos;m Philip!</h1>
 
-              <p>
-                Software developer in Sarasota, Florida. Passionate about
-                innovation and coding, committed to bringing creativity and
-                efficiency to every project.
-              </p>
-              <div className="home-buttons">
+                <p>
+                  Software developer in Sarasota, Florida. Passionate about
+                  innovation and coding, committed to bringing creativity and
+                  efficiency to every project.
+                </p>
+              </div>
+              <div className={styles.homeButtons}>
                 <Link className="primary-button" href="/projects">
                   My Projects
                 </Link>
@@ -32,25 +35,29 @@ export default function Home() {
                 </Link>
               </div>
             </FromBelowEntryDiv>
-            <Image className="portrait" src={PortraitImg} alt="Portrait" />
+            <Image src={PortraitImg} alt="Portrait" />
           </div>
         </section>
         <section>
-          <div className="sectionContents reverseRow wrapper column">
-            <FromBelowEntryDiv className="sectionText">
-              <h2>About Me</h2>
-              <p>
-                Originally from Nokomis, Florida, my lifelong enthusiasm for
-                video games has steered me towards a career in computer
-                programming.
-                <br />
-                <br />
-                With a strong foundation in Python and recent advancements in
-                learning JavaScript, React.js, and Next.js, I am eagerly
-                embracing the challenges and opportunities in the programming
-                landscape.
-              </p>
-              <div className="home-buttons">
+          <div
+            className={`${styles.sectionContents} ${styles.reverseRow} wrapper column`}
+          >
+            <FromBelowEntryDiv className={styles.columnFlexSection}>
+              <div className={styles.sectionText}>
+                <h2>About Me</h2>
+                <p>
+                  Originally from Nokomis, Florida, my lifelong enthusiasm for
+                  video games has steered me towards a career in computer
+                  programming.
+                  <br />
+                  <br />
+                  With a strong foundation in Python and recent advancements in
+                  learning JavaScript, React.js, and Next.js, I am eagerly
+                  embracing the challenges and opportunities in the programming
+                  landscape.
+                </p>
+              </div>
+              <div className={styles.homeButtons}>
                 <a
                   className="primary-button"
                   href="/Resume.pdf"

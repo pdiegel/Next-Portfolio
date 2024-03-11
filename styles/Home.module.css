@@ -1,0 +1,56 @@
+.homeButtons,
+.sectionText,
+.columnFlexSection,
+.sectionContents {
+    display: flex;
+}
+
+.sectionText,
+.columnFlexSection {
+    flex-direction: column;
+}
+
+.homeButtons,
+.sectionText {
+    gap: 10px;
+}
+
+.columnFlexSection {
+    gap: 20px;
+}
+
+.sectionContents {
+    gap: 50px;
+}
+
+.sectionContents img {
+    width: 80%;
+    height: auto;
+    border-radius: var(--border-radius);
+    max-width: 300px;
+}
+
+@media screen and (min-width: 750px) {
+
+    .cardLinks,
+    .sortSelectors,
+    .card,
+    .languageIcons {
+        gap: 20px;
+    }
+
+    .columnFlexSection {
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .sectionContents {
+        flex-direction: row;
+        gap: 90px;
+        height: min-content;
+    }
+
+    .reverseRow {
+        flex-direction: row-reverse;
+    }
+}

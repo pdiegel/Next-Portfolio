@@ -45,13 +45,16 @@ export default function Contact() {
           </FromLeftEntryDiv>
         </section>
         <section>
-          <FromBelowEntryDiv className="wrapper sectionText">
-            <p>
-              Phone: <a href="tel:1-941-416-0937">(941) 416-0937</a>
-              <br />
-              If you would like to contact me via email, please use the form
-              below.
-            </p>
+          <FromBelowEntryDiv className={`wrapper ${styles.sectionContent}`}>
+            <div className={`${styles.contactInfo}`}>
+              <p>
+                Phone: <a href="tel:1-941-416-0937">(941) 416-0937</a>
+              </p>
+              <p>
+                If you would like to contact me via email, please use the form
+                below.
+              </p>
+            </div>
 
             <form
               onSubmit={(e) => submitForm(e)}

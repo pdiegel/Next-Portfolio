@@ -69,7 +69,7 @@ export default function Projects({ repos }: { repos: Repos }) {
       </section>
 
       <section>
-        <div className="wrapper sectionText">
+        <div className={`wrapper ${styles.sectionContents}`}>
           <div className={styles.sortSelectors}>
             <SelectionBox
               onChange={(e) => setSortType(e.target.value)}
