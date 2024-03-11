@@ -2,6 +2,12 @@
     text-align: left;
 }
 
+.sectionContents {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .sortSelectors {
     display: flex;
     flex-direction: column;
@@ -36,7 +42,7 @@
 .cardWrapper {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
 }
 
 #sortType,
@@ -44,7 +50,6 @@
     width: 100%;
     height: 40px;
     border-radius: 5px;
-    padding: 5px;
     font-size: 16px;
 }
 

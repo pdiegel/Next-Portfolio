@@ -1,13 +1,24 @@
+.form,
+.contactInfo,
+.sectionContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.form,
+.formGroup,
+.contactInfo {
+    gap: 10px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 10px;
 }
 
 .formGroup {
     display: flex;
-    gap: 10px;
 }
 
 .formGroup > input,
@@ -24,11 +35,20 @@
     width: 100%;
 }
 
+.sectionContent {
+    gap: 20px;
+}
+
 @media screen and (min-width: 765px) {
 
     .form,
-    .formGroup {
+    .formGroup,
+    .contactInfo {
         gap: 20px;
+    }
+
+    .sectionContent {
+        gap: 40px;
     }
 
 }
