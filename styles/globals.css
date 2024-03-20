@@ -8,7 +8,7 @@ html {
     --background-main: #FFF;
     --banner-color: #F6F8FA;
     --border-color: #D0D7DE;
-    --max-width: 800px;
+    --max-width: 1200px;
     --border-radius: 12px;
     --font-main: 'DM Sans', sans-serif;
     --icon-color: #e0e0e0;
@@ -22,6 +22,33 @@ html {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
+}
+
+main {
+    min-height: 100vh;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.flex {
+    display: flex;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.items-center {
+    align-items: center;
+
 }
 
 .container {
@@ -198,11 +225,6 @@ section h1 {
     margin-bottom: var(--ungrouped-margin);
 }
 
-.home-buttons {
-    display: flex;
-    gap: 10px;
-}
-
 .icon-button {
     height: 2em;
     width: 2em;
@@ -218,7 +240,6 @@ section h1 {
 
 .primary-button,
 .secondary-button {
-    background-color: var(--primary-color);
     border: none;
     padding: 10px 15px;
     border-radius: 100px;
@@ -230,6 +251,7 @@ section h1 {
 }
 
 .primary-button {
+    background-color: var(--primary-color);
     border: 1px solid transparent;
 }
 
@@ -273,7 +295,6 @@ section {
     flex-direction: column;
 }
 
-label,
 select,
 input,
 textarea {

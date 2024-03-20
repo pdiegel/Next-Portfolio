@@ -55,41 +55,51 @@ export default function RepoCard({
 
   return (
     <FromBelowEntryDiv className={styles.card}>
-      <h2>{name}</h2>
-      <p>{description}</p>
+      <div className="flex-col gap-10">
+        <h2>{name}</h2>
+        <p>{description}</p>
+      </div>
 
-      <h3>Languages Used:</h3>
-      <div className={styles.languageIcons}>
-        {languages &&
-          languages.map((value, index) => {
-            if (value in languageIconMap) {
-              return (
-                <Image
-                  className={styles.languageIcon}
-                  key={index}
-                  src={languageIconMap[value]}
-                  alt={value}
-                  width={50}
-                  height={50}
-                />
-              );
-            }
-            return <span key={index}>{value}, </span>;
-          })}
+      <div className="flex-col gap-20">
+        <div className="flex-col gap-10">
+          <h3>Languages Used:</h3>
+          <div className={styles.languageIcons}>
+            {languages &&
+              languages.map((value, index) => {
+                if (value in languageIconMap) {
+                  return (
+                    <Image
+                      className={styles.languageIcon}
+                      key={index}
+                      src={languageIconMap[value]}
+                      alt={value}
+                      width={30}
+                      height={30}
+                    />
+                  );
+                }
+                return <span key={index}>{value}, </span>;
+              })}
+          </div>
+        </div>
+        <div className={styles.cardLinks}>
+          {homepage && (
+            <Link href={homepage} className="primary-button" target="_blank">
+              View Live
+            </Link>
+          )}
+          {html_url && (
+            <Link
+              href={html_url}
+              className={`secondary-button ${styles.darkText}`}
+              target="_blank"
+            >
+              View on GitHub
+            </Link>
+          )}
+        </div>
+        <p>Last Updated: {lastUpdated}</p>
       </div>
-      <div className={styles.cardLinks}>
-        {homepage && (
-          <Link href={homepage} target="_blank">
-            View Live
-          </Link>
-        )}
-        {html_url && (
-          <Link href={html_url} target="_blank">
-            View on GitHub
-          </Link>
-        )}
-      </div>
-      <p>Last Updated: {lastUpdated}</p>
     </FromBelowEntryDiv>
   );
 }

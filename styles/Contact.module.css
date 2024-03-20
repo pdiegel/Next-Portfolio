@@ -1,6 +1,7 @@
 .form,
 .contactInfo,
-.sectionContent {
+.sectionContent,
+.formGroup {
     display: flex;
     flex-direction: column;
 }
@@ -11,14 +12,13 @@
     gap: 10px;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.contactInfo a {
+    margin: 0 auto;
+    width: max-content;
 }
 
-.formGroup {
-    display: flex;
+.form {
+    width: 100%;
 }
 
 .formGroup > input,
@@ -27,8 +27,8 @@
 }
 
 .formGroup > label {
+    text-align: left;
     flex: 1;
-    text-align: right;
 }
 
 .formGroup button {
@@ -42,7 +42,6 @@
 @media screen and (min-width: 765px) {
 
     .form,
-    .formGroup,
     .contactInfo {
         gap: 20px;
     }

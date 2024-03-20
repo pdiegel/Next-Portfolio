@@ -30,10 +30,8 @@ export default async function handler(
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
       return res.status(400).json({ error: "Please fill out all fields" });
     }
-    console.log(`Email sent: ${info.response}`);
     return res.status(200).json({ message: "Email sent" });
   });
 }

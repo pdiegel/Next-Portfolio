@@ -2,7 +2,6 @@ export async function getData() {
   const req = await fetch("https://api.github.com/users/pdiegel/repos");
 
   const status = req.status;
-  console.log(status);
 
   const data = { status: status, results: await req.json() };
 

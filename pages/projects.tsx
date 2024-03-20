@@ -17,17 +17,14 @@ export default function Projects({ repos }: { repos: Repos }) {
       // Making a copy, because React doesn't behave well when you mutate state directly
       const sortedRepos = [...repos];
 
-      console.log(sortedRepos);
       if (sortType === "date") {
         if (sortDirection === "desc") {
-          console.log("sorting by date desc");
           return sortedRepos.sort(
             (a, b) =>
               new Date(b.updated_at).getTime() -
               new Date(a.updated_at).getTime()
           );
         } else {
-          console.log("sorting by date asc");
           return sortedRepos.sort(
             (a, b) =>
               new Date(a.updated_at).getTime() -
@@ -36,10 +33,8 @@ export default function Projects({ repos }: { repos: Repos }) {
         }
       } else {
         if (sortDirection === "desc") {
-          console.log("sorting by name desc");
           return sortedRepos.sort((a, b) => b.name.localeCompare(a.name));
         } else {
-          console.log("sorting by name asc");
           return sortedRepos.sort((a, b) => a.name.localeCompare(b.name));
         }
       }
@@ -116,11 +111,9 @@ export async function getStaticProps() {
   // Fetch repos from GitHub, using static props to avoid rate limiting.
   // We only need to update the repos every hour, so this is fine.
   try {
-    console.log("Fetching repos...");
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
     const res = await fetch(`${baseUrl}/repos`);
     const repos = await res.json();
-    console.log("Fetched repos successfully!");
 
     return {
       props: {

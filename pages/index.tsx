@@ -28,7 +28,7 @@ export default function Home() {
               </div>
               <div className={styles.homeButtons}>
                 <Link className="primary-button" href="/projects">
-                  My Projects
+                  Explore My Projects
                 </Link>
                 <Link className="secondary-button" href="/contact">
                   Contact Me

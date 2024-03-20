@@ -8,9 +8,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return data.status === 200 && res.status(200).json(data.results);
     })
     .catch((e) => {
-      console.log("Could not get repo language data");
-      console.log(e);
-
       return res.status(400).json({ error: e });
     });
 }

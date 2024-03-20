@@ -15,8 +15,6 @@ export default function Contact() {
       formDataObj[key] = value;
     });
 
-    console.log(JSON.stringify(formDataObj));
-
     fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify(formDataObj),
@@ -47,9 +45,7 @@ export default function Contact() {
         <section>
           <FromBelowEntryDiv className={`wrapper ${styles.sectionContent}`}>
             <div className={`${styles.contactInfo}`}>
-              <p>
-                Phone: <a href="tel:1-941-416-0937">(941) 416-0937</a>
-              </p>
+              <a href="tel:1-941-416-0937">Phone: (941) 416-0937</a>
               <p>
                 If you would like to contact me via email, please use the form
                 below.

@@ -15,6 +15,10 @@
     gap: 10px;
 }
 
+.homeButtons {
+    flex-wrap: wrap;
+}
+
 .columnFlexSection {
     gap: 20px;
 }
