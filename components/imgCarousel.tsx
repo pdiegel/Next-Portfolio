@@ -17,16 +17,18 @@ export default function ImageCarousel({
 
   return (
     <div className={styles.previewCarousel}>
-      <button
-        onClick={() => {
-          setDirection("left");
-          setIndex(index - 1);
-        }}
-        className={`primary-button ${disabledPrev ? "disabled" : ""}`}
-        disabled={disabledPrev}
-      >
-        {"<"}
-      </button>
+      {images.length > 1 && (
+        <button
+          onClick={() => {
+            setDirection("left");
+            setIndex(index - 1);
+          }}
+          className={`primary-button ${disabledPrev ? "disabled" : ""}`}
+          disabled={disabledPrev}
+        >
+          {"<"}
+        </button>
+      )}
       <AnimatePresence>
         <motion.div
           key={index}
@@ -53,16 +55,18 @@ export default function ImageCarousel({
           />
         </motion.div>
       </AnimatePresence>
-      <button
-        onClick={() => {
-          setDirection("right");
-          setIndex(index + 1);
-        }}
-        className={`primary-button ${disabledNext ? "disabled" : ""}`}
-        disabled={disabledNext}
-      >
-        {">"}
-      </button>
+      {images.length > 1 && (
+        <button
+          onClick={() => {
+            setDirection("right");
+            setIndex(index + 1);
+          }}
+          className={`primary-button ${disabledNext ? "disabled" : ""}`}
+          disabled={disabledNext}
+        >
+          {">"}
+        </button>
+      )}
     </div>
   );
 }

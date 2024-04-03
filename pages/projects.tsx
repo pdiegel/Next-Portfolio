@@ -5,17 +5,26 @@ import styles from "@/styles/Projects.module.css";
 import SelectionBox from "@/components/selectionbox";
 import FromLeftEntryDiv from "@/components/fromLeftEntryDiv";
 import { Repo, Repos } from "@/interfaces/repos";
+
 import SpiritHome from "@/public/project images/spirit search/HomePage.webp";
 import SpiritHome2 from "@/public/project images/spirit search/HomePage2.webp";
 import SpiritExplore from "@/public/project images/spirit search/ExplorePage.webp";
 import SpiritAbout from "@/public/project images/spirit search/AboutPage.webp";
 import SpiritFavorites from "@/public/project images/spirit search/FavoritesPage.webp";
+
 import SurveySuiteJobSearch from "@/public/project images/red stake program/Close Job Search.webp";
 import SurveySuiteFileStatus from "@/public/project images/red stake program/File Status.webp";
 import SurveySuiteFileEntry from "@/public/project images/red stake program/File Entry.webp";
 import SurveySuiteIntakeSheet from "@/public/project images/red stake program/Intake Sheet.webp";
 import SurveySuiteWebsiteSearch from "@/public/project images/red stake program/Website Search.webp";
 import SurveySuiteCADOpener from "@/public/project images/red stake program/CAD File Opener.webp";
+
+import TodoList from "@/public/project images/todo list/Todo List.webp";
+
+import WeatherApp from "@/public/project images/weather app/Weather App.webp";
+
+import ReelRecsHomePage from "@/public/project images/reelrecs/ReelRecs.webp";
+import ReelRecsMoviePage from "@/public/project images/reelrecs/ReelRecs2.webp";
 
 const projectPreviews = [
   {
@@ -38,6 +47,18 @@ const projectPreviews = [
       SurveySuiteWebsiteSearch,
       SurveySuiteCADOpener,
     ],
+  },
+  {
+    name: "React-ToDo-List-App",
+    images: [TodoList],
+  },
+  {
+    name: "Next-Weather-App",
+    images: [WeatherApp],
+  },
+  {
+    name: "ReelRecsMovieRecommendation",
+    images: [ReelRecsHomePage, ReelRecsMoviePage],
   },
 ];
 

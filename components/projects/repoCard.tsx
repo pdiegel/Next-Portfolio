@@ -69,7 +69,7 @@ export default function RepoCard({
   return (
     <FromBelowEntryDiv className={cardClass}>
       {previewCard && <ImageCarousel images={projectPreview.images} />}
-      <div className="flex-col gap-20">
+      <div className="flex-col gap-20 min-w-40">
         <div className="flex-col gap-10">
           <h2>{name}</h2>
           <p>{description}</p>
