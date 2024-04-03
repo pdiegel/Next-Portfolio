@@ -268,10 +268,6 @@ section h1 {
     box-shadow: 0 0 15px var(--primary-transparent);
 }
 
-.primary-button:hover {
-    border: 1px solid var(--primary-dark);
-}
-
 .secondary-button:hover {
     background-color: var(--primary-color);
     color: #000;
@@ -352,6 +348,11 @@ footer svg {
 
 .footerIcons a {
     transition: scale 200ms;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 @media screen and (min-width: 765px) {

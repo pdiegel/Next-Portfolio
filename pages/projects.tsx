@@ -5,6 +5,41 @@ import styles from "@/styles/Projects.module.css";
 import SelectionBox from "@/components/selectionbox";
 import FromLeftEntryDiv from "@/components/fromLeftEntryDiv";
 import { Repo, Repos } from "@/interfaces/repos";
+import SpiritHome from "@/public/project images/spirit search/HomePage.webp";
+import SpiritHome2 from "@/public/project images/spirit search/HomePage2.webp";
+import SpiritExplore from "@/public/project images/spirit search/ExplorePage.webp";
+import SpiritAbout from "@/public/project images/spirit search/AboutPage.webp";
+import SpiritFavorites from "@/public/project images/spirit search/FavoritesPage.webp";
+import SurveySuiteJobSearch from "@/public/project images/red stake program/Close Job Search.webp";
+import SurveySuiteFileStatus from "@/public/project images/red stake program/File Status.webp";
+import SurveySuiteFileEntry from "@/public/project images/red stake program/File Entry.webp";
+import SurveySuiteIntakeSheet from "@/public/project images/red stake program/Intake Sheet.webp";
+import SurveySuiteWebsiteSearch from "@/public/project images/red stake program/Website Search.webp";
+import SurveySuiteCADOpener from "@/public/project images/red stake program/CAD File Opener.webp";
+
+const projectPreviews = [
+  {
+    name: "Spirit-Search",
+    images: [
+      SpiritHome,
+      SpiritHome2,
+      SpiritAbout,
+      SpiritExplore,
+      SpiritFavorites,
+    ],
+  },
+  {
+    name: "LandSurveyWorkflowSuite",
+    images: [
+      SurveySuiteJobSearch,
+      SurveySuiteFileStatus,
+      SurveySuiteFileEntry,
+      SurveySuiteIntakeSheet,
+      SurveySuiteWebsiteSearch,
+      SurveySuiteCADOpener,
+    ],
+  },
+];
 
 export default function Projects({ repos }: { repos: Repos }) {
   const [fetchedRepos, setRepos] = useState(repos);
@@ -50,7 +85,9 @@ export default function Projects({ repos }: { repos: Repos }) {
 
   const repoCards = fetchedRepos.map((repo: Repo) => {
     // Deconstruct the repo object into the props of RepoCard
-    return <RepoCard key={repo.id} {...repo} />;
+    return (
+      <RepoCard key={repo.id} {...repo} projectPreviews={projectPreviews} />
+    );
   });
 
   const validRepoContents = (

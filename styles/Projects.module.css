@@ -14,28 +14,32 @@
     flex-wrap: wrap;
 }
 
-.card {
+.card,
+.cardNoPreview {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
     background-color: var(--banner-color);
-    border-radius: calc(var(--border-radius) / 2);
+    border-radius: var(--border-radius);
     text-align: left;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     hyphens: auto;
     padding: var(--grouped-margin) 20px;
 }
 
-.card h2 {
+.card h2,
+.cardNoPreview h2 {
     word-break: break-all;
 }
 
-.card p {
+.card p,
+.cardNoPreview p {
     font-size: 1em;
 }
 
-.card p:last-of-type {
+.card p:last-of-type,
+.cardNoPreview p:last-of-type {
     color: #777;
 }
 
@@ -50,12 +54,12 @@
 #sortDirection {
     width: 100%;
     height: 40px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     font-size: 16px;
 }
 
 .languageIcon {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
 .languageIcons {
@@ -78,10 +82,64 @@
     margin: 0 auto;
 }
 
+.previewImg {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    object-position: top;
+}
+
+.previewCarousel {
+    display: flex;
+    position: relative;
+    overflow-x: hidden;
+    height: 200px;
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.previewCarousel button {
+    padding: 20px 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: #000;
+    position: absolute;
+    top: calc(50% - 20px);
+    z-index: 5;
+}
+
+.previewCarousel button:first-of-type {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    left: -2px;
+}
+
+.previewCarousel button:last-of-type {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    right: -2px;
+}
+
+.previewImgContainer {
+    height: 100%;
+    width: 100%;
+    transition: height 300ms;
+    position: relative;
+    overflow: hidden;
+}
+
 @media screen and (min-width: 500px) {
 
     .sortSelectors {
         gap: 20px;
+    }
+
+    .previewCarousel button {
+        padding: 30px 15px;
+        top: calc(50% - 30px);
+    }
+
+    .previewCarousel {
+        height: 300px;
     }
 
 }
@@ -91,4 +149,13 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .card {
+        flex-direction: row-reverse;
+        grid-column-start: span 2;
+        gap: 40px;
+    }
+
+    .previewCarousel {
+        height: 100%;
+    }
 }
