@@ -1,5 +1,5 @@
 import Head from "next/head";
-import PortraitImg from "@/public/philip.jpg";
+import PortraitImg from "@/public/philip.webp";
 import AboutImg from "@/public/programming.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,7 +35,12 @@ export default function Home() {
                 </Link>
               </div>
             </FromBelowEntryDiv>
-            <Image src={PortraitImg} alt="Portrait" />
+            <Image
+              src={PortraitImg}
+              alt="Portrait"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           </div>
         </section>
         <section>

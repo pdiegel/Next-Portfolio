@@ -17,14 +17,24 @@ export default function NavItem({
   const linkHandler = () => {
     if (url !== undefined) {
       return (
-        <Link href={url ? url : "#"} className="icon-button" target="_blank">
+        <Link
+          href={url ? url : "#"}
+          className="icon-button"
+          target="_blank"
+          aria-label={`Link to ${url}`}
+        >
           {icon}
         </Link>
       );
     }
     return (
       <>
-        <button className="icon-button" onClick={() => setOpen(!open)}>
+        <button
+          className="icon-button"
+          onClick={() => setOpen(!open)}
+          name="hamburgerMenu"
+          aria-label="Hamburger Menu Button"
+        >
           {open ? <CloseIcon /> : icon}
         </button>
         {open && hamburgerMenu()}

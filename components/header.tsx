@@ -14,12 +14,12 @@ export default function Header() {
           <h2>Philip Diegel</h2>
         </Link>
         <Nav>
-          <div className="hamburgerMenu">
+          <ul className="hamburgerMenu">
             <NavItem icon={<DropDownIcon />}>
               {/* Dropdown goes here */}
               <DropDownMenu />
             </NavItem>
-          </div>
+          </ul>
           <div className="navLinks">
             <DropDownMenu />
           </div>

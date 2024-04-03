@@ -4,12 +4,14 @@ html {
 
 :root {
     --primary-color: #6495ED;
+    --primary-dark: #154EB7;
+    --primary-transparent: rgba(100, 149, 237, 0.7);
     --font-color-main: #222;
     --background-main: #FFF;
     --banner-color: #F6F8FA;
     --border-color: #D0D7DE;
     --max-width: 1200px;
-    --border-radius: 12px;
+    --border-radius: 10px;
     --font-main: 'DM Sans', sans-serif;
     --icon-color: #e0e0e0;
     --grouped-margin: 20px;
@@ -133,7 +135,7 @@ footer {
 .nav-item button {
     background-color: var(--icon-color);
     padding: 10px;
-    border-radius: 25%;
+    border-radius: var(--border-radius);
     height: 20px;
     width: 20px;
     box-sizing: content-box;
@@ -157,14 +159,14 @@ header svg {
     flex-direction: column;
     background-color: var(--banner-color);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown a,
 .navLinks a {
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     transition: color 300ms, background-color 300ms;
 }
 
@@ -235,45 +237,44 @@ section h1 {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    border-radius: 50%;
+    border-radius: var(--border-radius);
 }
 
 .primary-button,
 .secondary-button {
     border: none;
     padding: 10px 15px;
-    border-radius: 100px;
-    color: var(--background-main);
+    border-radius: var(--border-radius);
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 1px 1px 5px transparent;
-    transition: box-shadow 300ms, background-color 300ms, color 300ms, border 300ms;
+    transition: box-shadow 200ms, background-color 200ms, color 200ms, border 200ms;
 }
 
 .primary-button {
     background-color: var(--primary-color);
     border: 1px solid transparent;
+    color: #000;
+    box-shadow: 0 0 15px transparent;
 }
 
 .secondary-button {
     background-color: transparent;
     border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .primary-button:hover,
 .secondary-button:hover {
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px var(--primary-transparent);
 }
 
 .primary-button:hover {
-    background-color: var(--background-main);
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--primary-dark);
 }
 
 .secondary-button:hover {
     background-color: var(--primary-color);
-    color: var(--background-main);
+    color: #000;
 }
 
 main ul {
@@ -304,7 +305,7 @@ textarea {
 select,
 input,
 textarea {
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     transition: box-shadow 300ms;
 }
@@ -359,14 +360,10 @@ footer svg {
         display: flex;
     }
 
-    .navLinks a.active {
-        background-color: var(--primary-color);
-        color: var(--background-main);
-    }
-
+    .navLinks a.active,
     .navLinks a:hover {
         background-color: var(--primary-color);
-        color: var(--background-main);
+        color: #000;
     }
 
     .footerIcons a:hover {
