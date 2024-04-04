@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import CloseIcon from "@/public/close.svg";
@@ -7,13 +7,15 @@ export default function NavItem({
   children,
   icon,
   url,
+  open,
+  handleOpen,
 }: {
   children?: ReactNode;
   icon: string | ReactNode;
   url?: string;
+  open?: boolean;
+  handleOpen?: (open: boolean) => void;
 }) {
-  const [open, setOpen] = useState(false);
-
   const linkHandler = () => {
     if (url !== undefined) {
       return (
@@ -31,7 +33,7 @@ export default function NavItem({
       <>
         <button
           className="icon-button"
-          onClick={() => setOpen(!open)}
+          {...(handleOpen && { onClick: () => handleOpen(!open) })}
           name="hamburgerMenu"
           aria-label="Hamburger Menu Button"
         >

@@ -1,5 +1,5 @@
-{
-  "Home": "/",
-  "Projects": "/projects",
-  "Contact": "/contact"
-}
+[
+  { "name": "Home", "url": "/", "icon": "home.svg" },
+  { "name": "Projects", "url": "/projects", "icon": "projects.svg" },
+  { "name": "Contact", "url": "/contact", "icon": "contact.svg" }
+]

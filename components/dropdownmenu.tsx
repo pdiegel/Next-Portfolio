@@ -1,8 +1,19 @@
 import navigationUrls from "@/public/navigation.json";
 import Link from "next/link";
 import { useState, useEffect, ReactNode } from "react";
+import Image from "next/image";
 
-function DropDownItem({ url, ...props }: { url: string; children: ReactNode }) {
+function DropDownItem({
+  url,
+  icon,
+  handleLinkChange,
+  ...props
+}: {
+  url: string;
+  icon: string;
+  handleLinkChange: () => void;
+  children: ReactNode;
+}) {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -18,18 +29,36 @@ function DropDownItem({ url, ...props }: { url: string; children: ReactNode }) {
       className={`menu-item ${
         isClient && url === window.location.pathname ? "active" : ""
       }`}
+      onClick={() => handleLinkChange()}
     >
+      <Image
+        className="hamburgerMenu"
+        src={icon}
+        height={20}
+        width={20}
+        alt={`Icon for ${url}`}
+      />
+
       {props.children}
     </Link>
   );
 }
 
-export default function DropDownMenu() {
+export default function DropDownMenu({
+  handleLinkChange,
+}: {
+  handleLinkChange: () => void;
+}) {
   const dropDownObjects = () => {
-    return Object.entries(navigationUrls).map(([navName, url]) => {
+    return navigationUrls.map((navItem) => {
       return (
-        <DropDownItem key={navName} url={url}>
-          {navName}
+        <DropDownItem
+          key={navItem.name}
+          url={navItem.url}
+          icon={navItem.icon}
+          handleLinkChange={handleLinkChange}
+        >
+          {navItem.name}
         </DropDownItem>
       );
     });

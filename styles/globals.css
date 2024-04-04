@@ -3,9 +3,8 @@ html {
 }
 
 :root {
-    --primary-color: #6495ED;
-    --primary-dark: #154EB7;
-    --primary-transparent: rgba(100, 149, 237, 0.7);
+    --primary-color: rgb(137, 204, 253);
+    --primary-transparent: rgba(137, 204, 253, 0.4);
     --font-color-main: #222;
     --background-main: #FFF;
     --banner-color: #F6F8FA;
@@ -71,20 +70,15 @@ main {
 
 body {
     background-color: var(--background-main);
+    color: var(--font-color-main);
     width: 100%;
 }
 
-h1 {
-    letter-spacing: -1px;
-}
-
 h2 {
-    letter-spacing: -2px;
     font-size: 2.25rem;
 }
 
 h3 {
-    letter-spacing: -1px;
     font-size: 1.5rem;
 }
 
@@ -113,7 +107,6 @@ p {
 header,
 footer {
     padding: 15px;
-    background-color: var(--banner-color);
 }
 
 .headerItems {
@@ -133,16 +126,12 @@ footer {
 
 
 .nav-item button {
-    background-color: var(--icon-color);
     padding: 10px;
     border-radius: var(--border-radius);
     height: 20px;
     width: 20px;
     box-sizing: content-box;
-}
-
-.nav-item button {
-    border: none;
+    border: 2px solid var(--primary-transparent);
 }
 
 header svg {
@@ -157,30 +146,36 @@ header svg {
     width: 200px;
     display: flex;
     flex-direction: column;
-    background-color: var(--banner-color);
+    background-color: var(--background-main);
+    border: 1px solid var(--primary-transparent);
     padding: 10px;
     border-radius: var(--border-radius);
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    gap: 10px;
 }
 
 .dropdown a,
 .navLinks a {
     text-decoration: none;
-    border-radius: var(--border-radius);
     transition: color 300ms, background-color 300ms;
+    border-radius: var(--border-radius);
 }
 
 .dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     padding: 15px 20px;
 }
 
 .dropdown a.active,
-.navLinks a.active {
-    background-color: rgba(0, 0, 0, 0.1);
+.navLinks a.active,
+.dropdown a:hover {
+    background-color: var(--primary-transparent);
 }
 
 .navLinks a {
     padding: 5px 10px;
+
 }
 
 .navLinks {
@@ -202,7 +197,7 @@ section h1 {
 }
 
 .darkSection {
-    background-color: black;
+    background-color: var(--font-color-main);
     color: #eee;
 }
 
@@ -230,7 +225,6 @@ section h1 {
 .icon-button {
     height: 2em;
     width: 2em;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
     background-color: white;
     border: none;
     display: flex;
@@ -238,6 +232,7 @@ section h1 {
     align-items: center;
     padding: 5px;
     border-radius: var(--border-radius);
+    cursor: pointer;
 }
 
 .primary-button,
@@ -265,7 +260,7 @@ section h1 {
 
 .primary-button:hover,
 .secondary-button:hover {
-    box-shadow: 0 0 15px var(--primary-transparent);
+    box-shadow: 0 0 15px var(--primary-color);
 }
 
 .secondary-button:hover {
@@ -295,15 +290,15 @@ section {
 select,
 input,
 textarea {
-    padding: 5px;
+    padding: 10px;
 }
 
 select,
 input,
 textarea {
     border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    transition: box-shadow 300ms;
+    border: 1px solid var(--primary-transparent);
+    transition: border-color 300ms;
 }
 
 label {
@@ -312,7 +307,7 @@ label {
 
 select:hover {
     cursor: pointer;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
 }
 
 .text-center {
@@ -322,7 +317,7 @@ select:hover {
 
 footer {
     text-align: center;
-    background-color: black;
+    background-color: var(--font-color-main);
 }
 
 footer p {
@@ -368,8 +363,8 @@ footer svg {
 
     .navLinks a.active,
     .navLinks a:hover {
-        background-color: var(--primary-color);
         color: #000;
+        background-color: var(--primary-transparent);
     }
 
     .footerIcons a:hover {

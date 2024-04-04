@@ -1,11 +1,19 @@
+"use client";
+
 import Nav from "./nav";
 import NavItem from "./navitem";
 import DropDownIcon from "@/public/dropdown.svg";
 import DropDownMenu from "./dropdownmenu";
 import FromLeftEntryDiv from "./fromLeftEntryDiv";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const handleLinkChange = () => {
+    setOpen(false);
+  };
   return (
     <header>
       <FromLeftEntryDiv className="headerItems">
@@ -15,13 +23,13 @@ export default function Header() {
         </Link>
         <Nav>
           <ul className="hamburgerMenu">
-            <NavItem icon={<DropDownIcon />}>
+            <NavItem icon={<DropDownIcon />} open={open} handleOpen={setOpen}>
               {/* Dropdown goes here */}
-              <DropDownMenu />
+              <DropDownMenu handleLinkChange={handleLinkChange} />
             </NavItem>
           </ul>
           <div className="navLinks">
-            <DropDownMenu />
+            <DropDownMenu handleLinkChange={handleLinkChange} />
           </div>
         </Nav>
       </FromLeftEntryDiv>

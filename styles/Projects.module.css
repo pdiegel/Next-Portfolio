@@ -20,12 +20,12 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
-    background-color: var(--banner-color);
     border-radius: var(--border-radius);
     text-align: left;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     hyphens: auto;
     padding: var(--grouped-margin) 20px;
+    border: 1px solid var(--primary-transparent);
+    box-shadow: 0 0 5px var(--primary-transparent);
 }
 
 .card h2,
