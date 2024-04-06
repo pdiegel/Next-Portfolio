@@ -144,7 +144,7 @@
     .featuredCard {
         flex-direction: row-reverse;
         grid-column: span 2;
-        gap: 40px;
+        gap: 80px;
     }
 
     .previewCarousel {
