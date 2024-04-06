@@ -223,9 +223,6 @@ section h1 {
 }
 
 .icon-button {
-    height: 2em;
-    width: 2em;
-    background-color: white;
     border: none;
     display: flex;
     justify-content: center;
@@ -266,10 +263,6 @@ section h1 {
 .secondary-button:hover {
     background-color: var(--primary-color);
     color: #000;
-}
-
-main ul {
-    padding-left: var(--grouped-margin);
 }
 
 section {
@@ -324,9 +317,9 @@ footer p {
     color: #eee;
 }
 
-footer svg {
-    height: 1.5em;
-    width: 1.5em;
+.socialIcons svg {
+    height: 2em;
+    width: 2em;
 }
 
 .footerItems {
@@ -335,13 +328,12 @@ footer svg {
     gap: 10px;
 }
 
-.footerIcons {
+.socialIcons {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    gap: 10px;
 }
 
-.footerIcons a {
+.socialIcons a {
     transition: scale 200ms;
 }
 
@@ -367,7 +359,7 @@ footer svg {
         background-color: var(--primary-transparent);
     }
 
-    .footerIcons a:hover {
+    .socialIcons a:hover {
         scale: 1.2;
     }
 

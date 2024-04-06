@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#000000" width="800px" height="800px" viewBox="0 -2.04 16 16" id="mail-16px" xmlns="http://www.w3.org/2000/svg">
-  <path id="Path_76" data-name="Path 76" d="M-8.417,3.169a2.493,2.493,0,0,0-.707-.707A2.481,2.481,0,0,0-10.5,2.045h-11a2.481,2.481,0,0,0-1.376.417,2.493,2.493,0,0,0-.707.707A2.483,2.483,0,0,0-24,4.545v6.91a2.5,2.5,0,0,0,2.5,2.5h11a2.5,2.5,0,0,0,2.5-2.5V4.545A2.483,2.483,0,0,0-8.417,3.169ZM-21.5,3.045h11a1.48,1.48,0,0,1,.643.151L-16,9.338-22.143,3.2A1.48,1.48,0,0,1-21.5,3.045Zm11,9.91h-11a1.48,1.48,0,0,1-.643-.151l3.087-3.087a.5.5,0,0,0,0-.707.5.5,0,0,0-.707,0L-22.85,12.1a1.489,1.489,0,0,1-.15-.642V4.545a1.489,1.489,0,0,1,.15-.642l6.5,6.5a.5.5,0,0,0,.354.146.5.5,0,0,0,.354-.146l6.5-6.5A1.489,1.489,0,0,1-9,4.545v6.91a1.489,1.489,0,0,1-.15.642L-12.237,9.01a.5.5,0,0,0-.707,0,.5.5,0,0,0,0,.707L-9.857,12.8A1.48,1.48,0,0,1-10.5,12.955Z" transform="translate(24 -2.045)"/>
-</svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SVGRepo_bgCarrier" stroke-width="0">
+<rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#89ccfd" strokewidth="0"/>
+</g>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z" fill="#222222"/> </g>
+</svg>

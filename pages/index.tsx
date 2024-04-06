@@ -6,6 +6,10 @@ import Link from "next/link";
 import FromBelowEntryDiv from "@/components/fromBelowEntryDiv";
 import React from "react";
 import styles from "@/styles/Home.module.css";
+import NavItem from "@/components/navitem";
+import EmailIcon from "@/public/email.svg";
+import GitHubIcon from "@/public/github.svg";
+import LinkedInIcon from "@/public/linkedin.svg";
 
 export default function Home() {
   return (
@@ -34,6 +38,20 @@ export default function Home() {
                   Contact Me
                 </Link>
               </div>
+              <ul className="socialIcons">
+                <NavItem
+                  icon={<EmailIcon />}
+                  url="mailto:philipdiegel@gmail.com"
+                />
+                <NavItem
+                  icon={<GitHubIcon />}
+                  url="https://github.com/pdiegel"
+                />
+                <NavItem
+                  icon={<LinkedInIcon />}
+                  url="https://www.linkedin.com/in/philip-diegel"
+                />
+              </ul>
             </FromBelowEntryDiv>
             <Image
               src={PortraitImg}
