@@ -4,6 +4,7 @@ html {
 
 :root {
     --primary-color: rgb(137, 204, 253);
+    --primary-darker: #29a2ff;
     --primary-transparent: rgba(137, 204, 253, 0.4);
     --font-color-main: #222;
     --background-main: #FFF;
@@ -68,6 +69,10 @@ main {
     margin: 0 auto;
 }
 
+.grayText {
+    color: #777;
+}
+
 body {
     background-color: var(--background-main);
     color: var(--font-color-main);
@@ -97,7 +102,6 @@ select {
 a,
 p {
     text-decoration: none;
-    color: var(--font-color-main);
 }
 
 p {
@@ -234,7 +238,7 @@ section h1 {
 
 .primary-button,
 .secondary-button {
-    border: none;
+    border: 1px solid transparent;
     padding: 10px 15px;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -255,14 +259,13 @@ section h1 {
     color: var(--primary-color);
 }
 
-.primary-button:hover,
-.secondary-button:hover {
-    box-shadow: 0 0 15px var(--primary-color);
+.primary-button:hover {
+    background-color: var(--primary-darker);
+    border-color: var(--primary-darker);
 }
 
 .secondary-button:hover {
-    background-color: var(--primary-color);
-    color: #000;
+    box-shadow: 0 0 10px 2px var(--primary-color);
 }
 
 section {
@@ -290,8 +293,12 @@ select,
 input,
 textarea {
     border-radius: var(--border-radius);
-    border: 1px solid var(--primary-transparent);
+    border: 1px solid var(--primary-color);
     transition: border-color 300ms;
+}
+
+textarea {
+    min-height: 100px;
 }
 
 label {

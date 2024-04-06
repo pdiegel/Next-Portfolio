@@ -15,6 +15,7 @@
 .contactInfo a {
     margin: 0 auto;
     width: max-content;
+    color: var(--font-color-main);
 }
 
 .form {

@@ -17,6 +17,8 @@ export default function RepoCard({
   homepage,
   updated_at,
   projectPreviews,
+  projectNicknames,
+  featured,
 }: {
   description: string;
   html_url: string;
@@ -25,6 +27,8 @@ export default function RepoCard({
   homepage: string;
   updated_at: string;
   projectPreviews: { name: string; images: StaticImageData[] }[];
+  projectNicknames: { [key: string]: string };
+  featured: boolean;
 }) {
   const [languages, setLanguages] = useState([] as string[]);
 
@@ -64,14 +68,22 @@ export default function RepoCard({
     projectPreview?.images?.length !== undefined &&
     projectPreview?.images.length > 0;
 
-  const cardClass = previewCard ? styles.card : styles.cardNoPreview;
+  const cardClass = previewCard
+    ? featured
+      ? styles.featuredCard
+      : styles.card
+    : styles.cardNoPreview;
 
   return (
     <FromBelowEntryDiv className={cardClass}>
       {previewCard && <ImageCarousel images={projectPreview.images} />}
       <div className="flex-col gap-20 min-w-40">
         <div className="flex-col gap-10">
-          <h2>{name}</h2>
+          <h2>
+            {Object.keys(projectNicknames).includes(name)
+              ? projectNicknames[name]
+              : name}
+          </h2>
           <p>{description}</p>
         </div>
 
@@ -113,7 +125,7 @@ export default function RepoCard({
               </Link>
             )}
           </div>
-          <p>Last Updated: {lastUpdated}</p>
+          <p className="grayText">Last Updated: {lastUpdated}</p>
         </div>
       </div>
     </FromBelowEntryDiv>

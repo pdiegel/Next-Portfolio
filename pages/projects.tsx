@@ -62,41 +62,49 @@ const projectPreviews = [
   },
 ];
 
+const projectNicknames = {
+  "Spirit-Search": "Spirit Search",
+  LandSurveyWorkflowSuite: "Surveying Workflow Suite",
+  "React-ToDo-List-App": "To-Do List App",
+  "Next-Weather-App": "Weather App",
+  ReelRecsMovieRecommendation: "ReelRecs",
+  FloridaPropertyData: "Land Parcel Data Retriever",
+  "Next-Portfolio": "Portfolio Website",
+  JobRecordManager: "Job Record Manager",
+  "FEMA-Image-Attachment-Generator": "FEMA Image Attachment Generator",
+  ChecklistGUI: "Checklist GUI",
+  SecurePassGen: "Password Generator",
+  FileUtils: "Windows File Utilities",
+  DownloadsFolderOrganizer: "Downloads Folder Organizer",
+} as { [key: string]: string };
+
+const featuredProjects = ["Spirit-Search", "LandSurveyWorkflowSuite"];
+
 export default function Projects({ repos }: { repos: Repos }) {
   const [fetchedRepos, setRepos] = useState(repos);
-  const [sortType, setSortType] = useState("date");
-  const [sortDirection, setSortDirection] = useState("desc");
 
-  const sortRepos = useCallback(
-    (repos: Repos) => {
-      // Sort the repos by date or name, ascending or descending
-      // Making a copy, because React doesn't behave well when you mutate state directly
-      const sortedRepos = [...repos];
-
-      if (sortType === "date") {
-        if (sortDirection === "desc") {
-          return sortedRepos.sort(
-            (a, b) =>
-              new Date(b.updated_at).getTime() -
-              new Date(a.updated_at).getTime()
-          );
-        } else {
-          return sortedRepos.sort(
-            (a, b) =>
-              new Date(a.updated_at).getTime() -
-              new Date(b.updated_at).getTime()
-          );
-        }
+  const sortRepos = useCallback((repos: Repos) => {
+    let sortedRepos = [...repos];
+    sortedRepos = sortedRepos.sort(
+      (a, b) =>
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    );
+    return sortedRepos.sort((a, b) => {
+      if (
+        featuredProjects.includes(a.name) &&
+        !featuredProjects.includes(b.name)
+      ) {
+        return -1;
+      } else if (
+        !featuredProjects.includes(a.name) &&
+        featuredProjects.includes(b.name)
+      ) {
+        return 1;
       } else {
-        if (sortDirection === "desc") {
-          return sortedRepos.sort((a, b) => b.name.localeCompare(a.name));
-        } else {
-          return sortedRepos.sort((a, b) => a.name.localeCompare(b.name));
-        }
+        return 0;
       }
-    },
-    [sortDirection, sortType]
-  );
+    });
+  }, []);
 
   useEffect(() => {
     setRepos((r: Repos) => sortRepos([...r]));
@@ -107,7 +115,13 @@ export default function Projects({ repos }: { repos: Repos }) {
   const repoCards = fetchedRepos.map((repo: Repo) => {
     // Deconstruct the repo object into the props of RepoCard
     return (
-      <RepoCard key={repo.id} {...repo} projectPreviews={projectPreviews} />
+      <RepoCard
+        key={repo.id}
+        {...repo}
+        projectPreviews={projectPreviews}
+        projectNicknames={projectNicknames}
+        featured={featuredProjects.includes(repo.name)}
+      />
     );
   });
 
@@ -123,28 +137,6 @@ export default function Projects({ repos }: { repos: Repos }) {
 
       <section>
         <div className={`wrapper ${styles.sectionContents}`}>
-          <div className={styles.sortSelectors}>
-            <SelectionBox
-              onChange={(e) => setSortType(e.target.value)}
-              name="sortType"
-              label="Sort by:"
-              value={sortType}
-            >
-              <option value="date">Date</option>
-              <option value="name">Name</option>
-            </SelectionBox>
-
-            <SelectionBox
-              onChange={(e) => setSortDirection(e.target.value)}
-              name="sortDirection"
-              label="Direction:"
-              value={sortDirection}
-            >
-              <option value="desc">Descending</option>
-              <option value="asc">Ascending</option>
-            </SelectionBox>
-          </div>
-
           <div className={styles.cardWrapper}>{repos && repoCards}</div>
         </div>
       </section>

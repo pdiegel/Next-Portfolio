@@ -8,14 +8,9 @@
     gap: 20px;
 }
 
-.sortSelectors {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
 .card,
-.cardNoPreview {
+.cardNoPreview,
+.featuredCard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,38 +19,37 @@
     text-align: left;
     hyphens: auto;
     padding: var(--grouped-margin) 20px;
-    border: 1px solid var(--primary-transparent);
-    box-shadow: 0 0 5px var(--primary-transparent);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 10px 3px var(--primary-transparent);
 }
 
 .card h2,
-.cardNoPreview h2 {
+.cardNoPreview h2,
+.featuredCard h2 {
     word-break: break-all;
 }
 
 .card p,
-.cardNoPreview p {
+.cardNoPreview p,
+.featuredCard p {
     font-size: 1em;
 }
 
-.card p:last-of-type,
-.cardNoPreview p:last-of-type {
-    color: #777;
+.featuredCard {
+    background-color: var(--font-color-main);
+    color: #eee;
+    box-shadow: 0 0 20px 10px var(--primary-color);
+}
+
+.featuredCard a:last-of-type {
+    color: var(--primary-color);
 }
 
 .cardWrapper {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: auto;
-    gap: 20px;
-}
-
-#sortType,
-#sortDirection {
-    width: 100%;
-    height: 40px;
-    border-radius: var(--border-radius);
-    font-size: 16px;
+    gap: 50px;
 }
 
 .languageIcon {
@@ -129,10 +123,6 @@
 
 @media screen and (min-width: 500px) {
 
-    .sortSelectors {
-        gap: 20px;
-    }
-
     .previewCarousel button {
         padding: 30px 15px;
         top: calc(50% - 30px);
@@ -150,7 +140,8 @@
         grid-auto-flow: dense;
     }
 
-    .card {
+    .card,
+    .featuredCard {
         flex-direction: row-reverse;
         grid-column: span 2;
         gap: 40px;
