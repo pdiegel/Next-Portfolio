@@ -138,6 +138,11 @@ footer {
     border: 2px solid var(--primary-transparent);
 }
 
+header a {
+    color: var(--font-color-main);
+
+}
+
 header svg {
     height: 20px;
     width: 20px;
