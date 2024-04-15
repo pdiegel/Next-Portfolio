@@ -1,5 +1,6 @@
 .heading {
     text-align: left;
+
 }
 
 .sectionContents {
@@ -36,17 +37,12 @@
 .card,
 .cardNoPreview {
     background-color: var(--background-lighter);
-    border: 1px solid var(--font-color-main);
+    box-shadow: 0 8px 16px var(--primary-transparent);
 }
 
 .featuredCard {
-    background-color: var(--font-color-main);
-    border: 1px solid var(--primary-color);
-    color: var(--font-color-secondary);
-}
-
-.featuredCard a:last-of-type {
-    color: var(--primary-color);
+    background-color: var(--background-lighter);
+    box-shadow: 0 8px 16px var(--primary-color);
 }
 
 .cardWrapper {
