@@ -22,14 +22,8 @@
     width: 100%;
 }
 
-.formGroup > input,
-.formGroup > textarea {
-    flex: 4;
-}
-
 .formGroup > label {
     text-align: left;
-    flex: 1;
 }
 
 .formGroup button {

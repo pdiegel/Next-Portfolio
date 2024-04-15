@@ -71,7 +71,7 @@ const projectNicknames = {
   FloridaPropertyData: "Land Parcel Data Retriever",
   "Next-Portfolio": "Portfolio Website",
   JobRecordManager: "Job Record Manager",
-  "FEMA-Image-Attachment-Generator": "FEMA Image Attachment Generator",
+  "FEMA-Image-Attachment-Generator": "FEMA Attachment Generator",
   ChecklistGUI: "Checklist GUI",
   SecurePassGen: "Password Generator",
   FileUtils: "Windows File Utilities",

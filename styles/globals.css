@@ -3,11 +3,13 @@ html {
 }
 
 :root {
-    --primary-color: rgb(137, 204, 253);
-    --primary-darker: #29a2ff;
-    --primary-transparent: rgba(137, 204, 253, 0.4);
-    --font-color-main: #222;
-    --background-main: #FFF;
+    --primary-color: hsl(205, 97%, 76%);
+    --primary-darker: hsl(205, 97%, 65%);
+    --primary-transparent: hsla(205, 97%, 76%, 0.4);
+    --font-color-main: hsl(205, 97%, 8%);
+    --background-main: hsl(205, 97%, 95%);
+    --background-lighter: hsl(205, 97%, 98%);
+    --font-color-secondary: var(--background-main);
     --banner-color: #F6F8FA;
     --border-color: #D0D7DE;
     --max-width: 1200px;
@@ -18,6 +20,7 @@ html {
     --ungrouped-margin: calc(var(--grouped-margin)*2);
     --header-height: 6rem;
     --box-shadow-main: inset 0 -1px var(--border-color);
+    --gray: hsl(205, 10%, 60%);
 }
 
 * {
@@ -70,7 +73,7 @@ main {
 }
 
 .grayText {
-    color: #777;
+    color: var(--gray);
 }
 
 body {
@@ -126,6 +129,7 @@ footer {
 .nav-item {
     list-style: none;
     position: relative;
+    overflow: visible;
 }
 
 
@@ -135,7 +139,8 @@ footer {
     height: 20px;
     width: 20px;
     box-sizing: content-box;
-    border: 2px solid var(--primary-transparent);
+    border: 1px solid var(--font-color-main);
+    background-color: var(--background-lighter);
 }
 
 header a {
@@ -155,8 +160,8 @@ header svg {
     width: 200px;
     display: flex;
     flex-direction: column;
-    background-color: var(--background-main);
-    border: 1px solid var(--primary-transparent);
+    background-color: var(--background-lighter);
+    border: 1px solid var(--font-color-main);
     padding: 10px;
     border-radius: var(--border-radius);
     gap: 10px;
@@ -207,13 +212,13 @@ section h1 {
 
 .darkSection {
     background-color: var(--font-color-main);
-    color: #eee;
+    color: var(--font-color-secondary);
 }
 
 .darkSection p,
 .darkSection h1,
 .darkSection h2 {
-    color: #eee;
+    color: var(--font-color-secondary);
 }
 
 .aboutText,
@@ -239,6 +244,7 @@ section h1 {
     padding: 5px;
     border-radius: var(--border-radius);
     cursor: pointer;
+    overflow: visible;
 }
 
 .primary-button,
@@ -254,7 +260,7 @@ section h1 {
 .primary-button {
     background-color: var(--primary-color);
     border: 1px solid transparent;
-    color: #000;
+    color: var(--font-color-main);
     box-shadow: 0 0 15px transparent;
 }
 
@@ -291,19 +297,16 @@ section {
 select,
 input,
 textarea {
-    padding: 10px;
-}
-
-select,
-input,
-textarea {
     border-radius: var(--border-radius);
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--font-color-main);
     transition: border-color 300ms;
+    padding: 10px;
+    background-color: var(--background-lighter);
 }
 
 textarea {
     min-height: 100px;
+    resize: vertical;
 }
 
 label {
@@ -326,7 +329,7 @@ footer {
 }
 
 footer p {
-    color: #eee;
+    color: var(--font-color-secondary);
 }
 
 .socialIcons svg {
@@ -357,7 +360,6 @@ footer p {
 
 .min-w-40 {
     min-width: 40%;
-
 }
 
 @media screen and (min-width: 765px) {
@@ -368,7 +370,7 @@ footer p {
 
     .navLinks a.active,
     .navLinks a:hover {
-        color: #000;
+        color: var(--font-color-main);
         background-color: var(--primary-transparent);
     }
 
