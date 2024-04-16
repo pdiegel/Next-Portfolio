@@ -2,7 +2,6 @@ import Head from "next/head";
 import RepoCard from "@/components/projects/repoCard";
 import React, { useState, useEffect, useCallback } from "react";
 import styles from "@/styles/Projects.module.css";
-import SelectionBox from "@/components/selectionbox";
 import FromLeftEntryDiv from "@/components/fromLeftEntryDiv";
 import { Repo, Repos } from "@/interfaces/repos";
 
@@ -12,12 +11,11 @@ import SpiritExplore from "@/public/project images/spirit search/ExplorePage.web
 import SpiritAbout from "@/public/project images/spirit search/AboutPage.webp";
 import SpiritFavorites from "@/public/project images/spirit search/FavoritesPage.webp";
 
-import SurveySuiteJobSearch from "@/public/project images/red stake program/Close Job Search.webp";
-import SurveySuiteFileStatus from "@/public/project images/red stake program/File Status.webp";
-import SurveySuiteFileEntry from "@/public/project images/red stake program/File Entry.webp";
-import SurveySuiteIntakeSheet from "@/public/project images/red stake program/Intake Sheet.webp";
-import SurveySuiteWebsiteSearch from "@/public/project images/red stake program/Website Search.webp";
-import SurveySuiteCADOpener from "@/public/project images/red stake program/CAD File Opener.webp";
+import DatabaseJobSearch from "@/public/project images/database program/Close Job Search.webp";
+import DatabaseFEMA from "@/public/project images/database program/FEMA Attachment Generator.webp";
+import DatabaseFileEntry from "@/public/project images/database program/File Entry.webp";
+import DatabaseIntakeSheet from "@/public/project images/database program/Intake Sheet.webp";
+import DatabaseWebsiteSearch from "@/public/project images/database program/Website Search.webp";
 
 import TodoList from "@/public/project images/todo list/Todo List.webp";
 
@@ -38,14 +36,13 @@ const projectPreviews = [
     ],
   },
   {
-    name: "LandSurveyWorkflowSuite",
+    name: "DatabaseManagementHelper",
     images: [
-      SurveySuiteJobSearch,
-      SurveySuiteFileStatus,
-      SurveySuiteFileEntry,
-      SurveySuiteIntakeSheet,
-      SurveySuiteWebsiteSearch,
-      SurveySuiteCADOpener,
+      DatabaseJobSearch,
+      DatabaseFEMA,
+      DatabaseFileEntry,
+      DatabaseIntakeSheet,
+      DatabaseWebsiteSearch,
     ],
   },
   {
@@ -64,7 +61,7 @@ const projectPreviews = [
 
 const projectNicknames = {
   "Spirit-Search": "Spirit Search",
-  LandSurveyWorkflowSuite: "Surveying Workflow Suite",
+  DatabaseManagementHelper: "Database Helper",
   "React-ToDo-List-App": "To-Do List App",
   "Next-Weather-App": "Weather App",
   ReelRecsMovieRecommendation: "ReelRecs",
@@ -78,7 +75,7 @@ const projectNicknames = {
   DownloadsFolderOrganizer: "Downloads Folder Organizer",
 } as { [key: string]: string };
 
-const featuredProjects = ["Spirit-Search", "LandSurveyWorkflowSuite"];
+const featuredProjects = ["Spirit-Search", "DatabaseManagementHelper"];
 
 export default function Projects({ repos }: { repos: Repos }) {
   const [fetchedRepos, setRepos] = useState(repos);
