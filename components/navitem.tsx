@@ -3,7 +3,7 @@ import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import CloseIcon from "@/public/close.svg";
 import { AccessibleContext } from "@/pages/_app";
-import NewTabIcon from "@/public/newTab.svg";
+import NewTabIcon from "@/public/newtab.svg";
 
 export default function NavItem({
   children,

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import FromBelowEntryDiv from "../fromBelowEntryDiv";
 import ImageCarousel from "../imgCarousel";
-import NewTabIcon from "@/public/newTab.svg";
+import NewTabIcon from "@/public/newtab.svg";
 
 const languageIconMap: {
   [key: string]: string;
