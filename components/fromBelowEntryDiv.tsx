@@ -1,5 +1,6 @@
+import { AccessibleContext } from "@/pages/_app";
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function FromBelowEntryDiv({
@@ -13,6 +14,7 @@ export default function FromBelowEntryDiv({
 }) {
   const control = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const { accessibilityPreference } = useContext(AccessibleContext);
 
   useEffect(() => {
     if (inView) {
@@ -20,13 +22,22 @@ export default function FromBelowEntryDiv({
     }
   }, [control, inView]);
 
+  let variants = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 50 },
+  };
+
+  if (accessibilityPreference) {
+    variants = {
+      visible: { opacity: 1, y: 0 },
+      hidden: { opacity: 0, y: 0 },
+    };
+  }
+
   return (
     <motion.div
       ref={ref}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 50 },
-      }}
+      variants={variants}
       initial={isVisibleInitially ? "visible" : "hidden"}
       animate={control}
       transition={{ duration: 0.5 }}

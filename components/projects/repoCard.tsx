@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import FromBelowEntryDiv from "../fromBelowEntryDiv";
 import ImageCarousel from "../imgCarousel";
+import NewTabIcon from "@/public/newTab.svg";
 
 const languageIconMap: {
   [key: string]: string;
@@ -74,45 +75,60 @@ export default function RepoCard({
       : styles.card
     : styles.cardNoPreview;
 
+  const projectName = Object.keys(projectNicknames).includes(name)
+    ? projectNicknames[name]
+    : name;
+
   return (
     <FromBelowEntryDiv className={cardClass}>
-      {previewCard && <ImageCarousel images={projectPreview.images} />}
+      {previewCard && (
+        <ImageCarousel
+          images={projectPreview.images}
+          projectName={projectName}
+        />
+      )}
       <div className="flex-col gap-20 min-w-40 space-between">
         <div className="flex-col gap-10">
-          <h2>
-            {Object.keys(projectNicknames).includes(name)
-              ? projectNicknames[name]
-              : name}
-          </h2>
-          <p>{description}</p>
+          <h2 aria-label="Project Name">{projectName}</h2>
+          <p aria-label="Project Description">{description}</p>
         </div>
 
         <div className="flex-col gap-20">
           <div className="flex-col gap-10">
             <h3>Languages Used:</h3>
-            <div className={styles.languageIcons}>
+            <ul
+              className={styles.languageIcons}
+              aria-label={"Programming languages used in " + projectName}
+            >
               {languages &&
                 languages.map((value, index) => {
                   if (value in languageIconMap) {
                     return (
-                      <Image
-                        className={styles.languageIcon}
-                        key={index}
-                        src={languageIconMap[value]}
-                        alt={value}
-                        width={30}
-                        height={30}
-                      />
+                      <li key={`${projectName} ${value} icon`}>
+                        <Image
+                          className={styles.languageIcon}
+                          src={languageIconMap[value]}
+                          alt={value + " icon"}
+                          width={30}
+                          height={30}
+                        />
+                      </li>
                     );
                   }
                   return <span key={index}>{value}, </span>;
                 })}
-            </div>
+            </ul>
           </div>
           <div className={styles.cardLinks}>
             {homepage && (
-              <Link href={homepage} className="primary-button" target="_blank">
+              <Link
+                href={homepage}
+                className="primary-button"
+                target="_blank"
+                aria-label={`View ${projectName} project live. Opens in a new tab.`}
+              >
                 View Live
+                <NewTabIcon />
               </Link>
             )}
             {html_url && (
@@ -120,12 +136,18 @@ export default function RepoCard({
                 href={html_url}
                 className={`secondary-button ${styles.darkText}`}
                 target="_blank"
+                aria-label={`View ${projectName} GitHub repository. Opens in a new tab.`}
               >
                 View on GitHub
+                <NewTabIcon />
               </Link>
             )}
           </div>
-          <p className="grayText">Last Updated: {lastUpdated}</p>
+          <p
+            aria-label={"Latest date in which " + projectName + " was updated."}
+          >
+            Last Updated: {lastUpdated}
+          </p>
         </div>
       </div>
     </FromBelowEntryDiv>

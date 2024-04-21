@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 16px;
 }
@@ -21,7 +25,6 @@ html {
     --ungrouped-margin: calc(var(--grouped-margin)*2);
     --header-height: 6rem;
     --box-shadow-main: inset 0 -1px var(--border-color);
-    --gray: hsl(205, 10%, 60%);
 }
 
 * {
@@ -73,10 +76,6 @@ main {
     margin: 0 auto;
 }
 
-.grayText {
-    color: var(--gray);
-}
-
 body {
     background-color: var(--background-main);
     color: var(--font-color-main);
@@ -91,9 +90,11 @@ h1 {
     background-clip: text;
 }
 
-h2 {
+h2,
+.logoLink {
     line-height: 120%;
     font-size: 2.25rem;
+    font-weight: 700;
 }
 
 h3 {
@@ -121,6 +122,11 @@ li,
 label,
 select {
     font-size: 1.15rem;
+}
+
+li {
+    list-style: none;
+
 }
 
 a,
@@ -182,6 +188,10 @@ header svg {
     padding: 10px;
     border-radius: var(--border-radius);
     gap: 10px;
+}
+
+.navLinks {
+    list-style: none;
 }
 
 .dropdown a,
@@ -261,6 +271,30 @@ section h1 {
     border-radius: var(--border-radius);
     cursor: pointer;
     overflow: visible;
+    position: relative;
+}
+
+.icon-button svg:last-of-type:not(:first-of-type),
+.primary-button svg,
+.secondary-button svg {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--primary-transparent);
+    border-radius: 100%;
+    background-color: var(--background-main);
+    fill: var(--font-color-main);
+}
+
+.icon-button svg:last-of-type:not(:first-of-type) {
+    right: -5px;
+    top: -5px;
+}
+
+.primary-button svg,
+.secondary-button svg {
+    right: -5px;
+    top: -5px;
 }
 
 .primary-button,
@@ -271,6 +305,7 @@ section h1 {
     cursor: pointer;
     text-decoration: none;
     transition: box-shadow 200ms, background-color 200ms, color 200ms, border 200ms;
+    position: relative;
 }
 
 .primary-button {
@@ -348,7 +383,8 @@ footer p {
     color: var(--font-color-secondary);
 }
 
-.socialIcons svg {
+.socialIcons .icon-button svg,
+.accessibility-menu svg {
     height: 2em;
     width: 2em;
     overflow: visible;
@@ -376,6 +412,83 @@ footer p {
 
 .min-w-40 {
     min-width: 40%;
+}
+
+.accessibility-menu {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.accessibility-menu > button {
+    background-color: var(--background-lighter);
+    border: 1px solid var(--font-color-main);
+    border-radius: 100%;
+    padding: 5px;
+    cursor: pointer;
+    transition: scale 200ms;
+    display: flex;
+    align-items: center;
+}
+
+.accessibility-menu > button:hover {
+    scale: 1.1;
+}
+
+#accessibility-menu-content.open {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 300px;
+    height: 100vh;
+    padding: 80px 20px 20px 20px;
+    background-color: var(--primary-darker);
+    color: var(--font-color-secondary);
+    z-index: 5;
+}
+
+#accessibility-menu-content.open::after {
+    background-color: rgba(0, 0, 0, 0.8);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+}
+
+#accessibility-menu-content.open p {
+    font-size: 24px;
+}
+
+.accessibility-menu-close {
+    border: 1px solid var(--font-color-main);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    transition: scale 200ms;
+}
+
+.accessibility-menu-close svg {
+    height: 100%;
+    width: 100%;
+}
+
+.accessibility-menu-close:hover {
+    scale: 1.1;
 }
 
 @media screen and (min-width: 765px) {

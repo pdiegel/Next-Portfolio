@@ -38,24 +38,26 @@ export default function Home() {
                   Contact Me
                 </Link>
               </div>
-              <ul className="socialIcons">
-                <NavItem
-                  icon={<EmailIcon />}
-                  url="mailto:philipdiegel@gmail.com"
-                />
-                <NavItem
-                  icon={<GitHubIcon />}
-                  url="https://github.com/pdiegel"
-                />
-                <NavItem
-                  icon={<LinkedInIcon />}
-                  url="https://www.linkedin.com/in/philip-diegel"
-                />
-              </ul>
+              <nav className="social" aria-label="social">
+                <ul className="socialIcons">
+                  <NavItem
+                    icon={<EmailIcon />}
+                    url="mailto:philipdiegel@gmail.com"
+                  />
+                  <NavItem
+                    icon={<GitHubIcon />}
+                    url="https://github.com/pdiegel"
+                  />
+                  <NavItem
+                    icon={<LinkedInIcon />}
+                    url="https://www.linkedin.com/in/philip-diegel"
+                  />
+                </ul>
+              </nav>
             </FromBelowEntryDiv>
             <Image
               src={PortraitImg}
-              alt="Portrait"
+              alt="Philip Diegel Portrait"
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />

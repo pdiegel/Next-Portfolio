@@ -1,10 +1,13 @@
 import Head from "next/head";
 import FromBelowEntryDiv from "@/components/fromBelowEntryDiv";
 import styles from "@/styles/Contact.module.css";
-import React from "react";
+import React, { use, useEffect, useState } from "react";
 import FromLeftEntryDiv from "@/components/fromLeftEntryDiv";
 
 export default function Contact() {
+  const [open, setOpen] = useState(false);
+  const [error, setError] = useState("");
+
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -23,10 +26,11 @@ export default function Contact() {
       },
     }).then((res) => {
       if (res.status === 200) {
-        alert("Message sent successfully!");
+        setOpen(true);
         form.reset();
       } else {
-        alert("There was an error sending your message.");
+        setError("There was an error sending your message.");
+        setOpen(true);
       }
     });
   };
@@ -59,15 +63,23 @@ export default function Contact() {
               data-netlify="true"
               className={styles.form}
             >
-              <input type="hidden" name="form-name" value="contact" />
               <p className={styles.formGroup}>
-                <label>Name</label> <input type="text" name="name" />
+                <label htmlFor="name">
+                  Name
+                  <input type="text" name="name" id="name" required />
+                </label>
               </p>
               <p className={styles.formGroup}>
-                <label>Email</label> <input type="email" name="email" />
+                <label htmlFor="email">
+                  Email
+                  <input type="email" name="email" id="email" required />
+                </label>
               </p>
               <p className={styles.formGroup}>
-                <label>Message</label> <textarea name="message"></textarea>
+                <label htmlFor="message">
+                  Message
+                  <textarea name="message" id="message" required></textarea>
+                </label>
               </p>
               <p className={styles.formGroup}>
                 <button className="primary-button" type="submit">
@@ -76,6 +88,15 @@ export default function Contact() {
               </p>
             </form>
           </FromBelowEntryDiv>
+          {open && (
+            <section className={styles.successMessage}>
+              {!error && <p>Message sent successfully!</p>}
+              {error && <p>{error}</p>}
+              <button onClick={() => setOpen(false)} className="primary-button">
+                Close
+              </button>
+            </section>
+          )}
         </section>
       </main>
     </>

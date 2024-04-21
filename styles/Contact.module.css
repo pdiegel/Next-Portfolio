@@ -6,16 +6,25 @@
     flex-direction: column;
 }
 
-.form,
-.formGroup,
 .contactInfo {
     gap: 10px;
+}
+
+.form,
+.formGroup {
+    gap: 20px;
 }
 
 .contactInfo a {
     margin: 0 auto;
     width: max-content;
     color: var(--font-color-main);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.contactInfo a:hover {
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .form {
@@ -24,6 +33,9 @@
 
 .formGroup > label {
     text-align: left;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
 }
 
 .formGroup button {
@@ -34,10 +46,23 @@
     gap: 20px;
 }
 
+.successMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    color: var(--font-color-secondary);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
 @media screen and (min-width: 765px) {
 
-    .form,
-    .contactInfo {
+    .form {
         gap: 20px;
     }
 

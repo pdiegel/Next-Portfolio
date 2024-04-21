@@ -24,23 +24,28 @@ function DropDownItem({
   }, []);
 
   return (
-    <Link
-      href={url ? url : "#"}
-      className={`menu-item ${
-        isClient && url === window.location.pathname ? "active" : ""
-      }`}
-      onClick={() => handleLinkChange()}
-    >
-      <Image
-        className="hamburgerMenu"
-        src={icon}
-        height={20}
-        width={20}
-        alt={`Icon for ${url}`}
-      />
+    <li>
+      <Link
+        href={url ? url : "#"}
+        className={`menu-item ${
+          isClient && url === window.location.pathname ? "active" : ""
+        }`}
+        onClick={() => handleLinkChange()}
+        aria-current={
+          isClient && url === window.location.pathname ? "page" : undefined
+        }
+      >
+        <Image
+          className="hamburgerMenu"
+          src={icon}
+          height={20}
+          width={20}
+          alt={`Icon for ${url}`}
+        />
 
-      {props.children}
-    </Link>
+        {props.children}
+      </Link>
+    </li>
   );
 }
 
