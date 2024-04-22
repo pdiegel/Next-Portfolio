@@ -25,7 +25,7 @@
 .card h2,
 .cardNoPreview h2,
 .featuredCard h2 {
-    word-break: break-all;
+    word-break: keep-all;
 }
 
 .card p,

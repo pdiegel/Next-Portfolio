@@ -25,9 +25,10 @@ export default function Home() {
                 <h1>Hi, I&apos;m Philip!</h1>
 
                 <p>
-                  Software developer in Sarasota, Florida. Passionate about
-                  innovation and coding, committed to bringing creativity and
-                  efficiency to every project.
+                  I&apos;m a Software Developer based in Sarasota, Florida. I
+                  love coding and getting creative with technology, passionate
+                  about making each project not only smarter but also more
+                  efficient.
                 </p>
               </div>
               <div className={styles.homeButtons}>
@@ -71,15 +72,14 @@ export default function Home() {
               <div className={styles.sectionText}>
                 <h2>About Me</h2>
                 <p>
-                  Originally from Nokomis, Florida, my lifelong enthusiasm for
-                  video games has steered me towards a career in computer
+                  I grew up in Nokomis, Florida, where my passion for video
+                  games sparked my journey into computer programming.
+                  <br />
+                  <br />
+                  With a solid foundation in Python and newly acquired skills in
+                  TypeScript, React.js, and Next.js, I&apos;m excited to tackle
+                  the evolving challenges and opportunities in the world of
                   programming.
-                  <br />
-                  <br />
-                  With a strong foundation in Python and recent advancements in
-                  learning JavaScript, React.js, and Next.js, I am eagerly
-                  embracing the challenges and opportunities in the programming
-                  landscape.
                 </p>
               </div>
               <div className={styles.homeButtons}>

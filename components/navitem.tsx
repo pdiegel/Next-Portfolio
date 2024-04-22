@@ -3,7 +3,6 @@ import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import CloseIcon from "@/public/close.svg";
 import { AccessibleContext } from "@/pages/_app";
-import NewTabIcon from "@/public/newtab.svg";
 
 export default function NavItem({
   children,
@@ -31,7 +30,6 @@ export default function NavItem({
             aria-label={`Link to ${url}. Opens in a new tab.`}
           >
             {icon}
-            <NewTabIcon />
           </Link>
         </li>
       );
