@@ -334,7 +334,7 @@ section {
     display: flex;
     gap: 10px;
     flex-direction: column;
-    padding: 20px 15px;
+    padding: 80px 15px;
 }
 
 .reverseRow {
@@ -491,6 +491,7 @@ footer p {
     scale: 1.1;
 }
 
+
 @media screen and (min-width: 765px) {
 
     .navLinks {
@@ -512,7 +513,7 @@ footer p {
     }
 
     section {
-        padding: 40px 30px;
+        padding: 80px 30px;
     }
 
     .sectionContents {
@@ -528,7 +529,6 @@ footer p {
 
     .reverseRow {
         flex-direction: row-reverse;
-
     }
 }
 

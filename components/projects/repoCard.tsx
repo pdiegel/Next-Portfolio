@@ -87,7 +87,7 @@ export default function RepoCard({
           projectName={projectName}
         />
       )}
-      <div className="flex-col gap-20 min-w-40 space-between">
+      <div className="flex-col gap-20 min-w-40 space-between p-20">
         <div className="flex-col gap-10">
           <h2 aria-label="Project Name">{projectName}</h2>
           <p aria-label="Project Description">{description}</p>
