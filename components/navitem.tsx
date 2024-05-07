@@ -57,18 +57,16 @@ export default function NavItem({
       x: 5,
       opacity: 1,
       zIndex: 5,
-      scale: 1,
     },
     closed: {
-      scale: 0,
       pointerEvents: "none",
     },
   };
 
-  let initial = { scale: 0, x: 0 };
+  let initial = { x: 5 };
 
   if (accessibilityPreference) {
-    initial = { scale: 1, x: 5 };
+    initial = { x: 5 };
   }
 
   if (accessibilityPreference) {
@@ -77,12 +75,10 @@ export default function NavItem({
         x: 5,
         opacity: 1,
         zIndex: 5,
-        scale: 1,
       },
       closed: {
         x: 5,
         opacity: 0,
-        scale: 1,
         zIndex: 0,
         pointerEvents: "none",
       },

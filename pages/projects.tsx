@@ -17,12 +17,10 @@ import DatabaseFileEntry from "@/public/project images/database program/File Ent
 import DatabaseIntakeSheet from "@/public/project images/database program/Intake Sheet.webp";
 import DatabaseWebsiteSearch from "@/public/project images/database program/Website Search.webp";
 
-import TodoList from "@/public/project images/todo list/Todo List.webp";
-
-import WeatherApp from "@/public/project images/weather app/Weather App.webp";
-
 import ReelRecsHomePage from "@/public/project images/reelrecs/ReelRecs.webp";
 import ReelRecsMoviePage from "@/public/project images/reelrecs/ReelRecs2.webp";
+
+import InkEmbersHome from "@/public/project images/ink embers/InkEmbers.webp";
 
 const projectPreviews = [
   {
@@ -46,24 +44,18 @@ const projectPreviews = [
     ],
   },
   {
-    name: "React-ToDo-List-App",
-    images: [TodoList],
-  },
-  {
-    name: "Next-Weather-App",
-    images: [WeatherApp],
-  },
-  {
     name: "ReelRecsMovieRecommendation",
     images: [ReelRecsHomePage, ReelRecsMoviePage],
+  },
+  {
+    name: "Responsive-Business-Website",
+    images: [InkEmbersHome],
   },
 ];
 
 const projectNicknames = {
   "Spirit-Search": "Spirit Search",
   DatabaseManagementHelper: "Database Helper",
-  "React-ToDo-List-App": "To-Do List App",
-  "Next-Weather-App": "Weather App",
   ReelRecsMovieRecommendation: "ReelRecs",
   FloridaPropertyData: "Land Parcel Data Retriever",
   "Next-Portfolio": "Portfolio Website",
@@ -73,6 +65,7 @@ const projectNicknames = {
   SecurePassGen: "Password Generator",
   FileUtils: "Windows File Utilities",
   DownloadsFolderOrganizer: "Downloads Folder Organizer",
+  "Responsive-Business-Website": "Business Website",
 } as { [key: string]: string };
 
 const featuredProjects = ["Spirit-Search", "DatabaseManagementHelper"];

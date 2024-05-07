@@ -4,5 +4,6 @@
   "HTML": "/languages/html.svg",
   "Python": "/languages/python.svg",
   "Procfile": "/languages/procfile.svg",
-  "TypeScript": "/languages/typescript.svg"
+  "TypeScript": "/languages/typescript.svg",
+  "PHP": "/languages/php.svg"
 }
