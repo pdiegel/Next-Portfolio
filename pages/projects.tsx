@@ -70,6 +70,8 @@ const projectNicknames = {
 
 const featuredProjects = ["Spirit-Search", "DatabaseManagementHelper"];
 
+const projectBlacklist = ["pdiegel"];
+
 export default function Projects({ repos }: { repos: Repos }) {
   const [fetchedRepos, setRepos] = useState(repos);
 
@@ -97,7 +99,9 @@ export default function Projects({ repos }: { repos: Repos }) {
   }, []);
 
   useEffect(() => {
-    setRepos((r: Repos) => sortRepos([...r]));
+    setRepos((r: Repos) =>
+      sortRepos([...r]).filter((repo) => !projectBlacklist.includes(repo.name))
+    );
   }, [sortRepos]);
 
   const noReposContents = <p>No repos found!</p>;
