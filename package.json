@@ -1,31 +1,32 @@
 {
-  "name": "next-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "@vercel/analytics": "^1.2.2",
-    "framer-motion": "^10.17.4",
-    "next": "14.0.4",
-    "node-fetch": "^3.3.2",
-    "nodemailer": "^6.9.12",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-intersection-observer": "^9.5.3",
-    "react-transition-group": "^4.4.5"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.25",
-    "@types/nodemailer": "^6.4.14",
-    "@types/react": "^18.2.64",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4",
-    "typescript": "^5.4.2"
-  }
+	"name": "next-portfolio",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "bunx biome check"
+	},
+	"dependencies": {
+		"@svgr/webpack": "^8.1.0",
+		"@vercel/analytics": "^1.2.2",
+		"framer-motion": "^10.17.4",
+		"next": "14.0.4",
+		"node-fetch": "^3.3.2",
+		"nodemailer": "^6.9.12",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-intersection-observer": "^9.5.3",
+		"react-transition-group": "^4.4.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"@types/node": "^20.11.25",
+		"@types/nodemailer": "^6.4.14",
+		"@types/react": "^18.2.64",
+		"eslint": "^8",
+		"eslint-config-next": "14.0.4",
+		"typescript": "^5.4.2"
+	}
 }

@@ -1,103 +1,104 @@
-import { ReactNode, useContext } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
-import CloseIcon from "@/public/close.svg";
+import { type ReactNode, useContext, useId } from "react";
 import { AccessibleContext } from "@/pages/_app";
+import CloseIcon from "@/public/close.svg";
 
 export default function NavItem({
-  children,
-  icon,
-  url,
-  open,
-  handleOpen,
+	children,
+	icon,
+	url,
+	open,
+	handleOpen,
 }: {
-  children?: ReactNode;
-  icon: string | ReactNode;
-  url?: string;
-  open?: boolean;
-  handleOpen?: (open: boolean) => void;
+	children?: ReactNode;
+	icon: string | ReactNode;
+	url?: string;
+	open?: boolean;
+	handleOpen?: (open: boolean) => void;
 }) {
-  const { accessibilityPreference } = useContext(AccessibleContext);
+	const { accessibilityPreference } = useContext(AccessibleContext);
+	const mainNavigationId = useId();
 
-  const linkHandler = () => {
-    if (url !== undefined) {
-      return (
-        <li className="nav-item">
-          <Link
-            href={url ? url : "#"}
-            className="icon-button"
-            target="_blank"
-            aria-label={`Link to ${url}. Opens in a new tab.`}
-          >
-            {icon}
-          </Link>
-        </li>
-      );
-    }
-    return (
-      <div className="nav-item">
-        <button
-          className="icon-button"
-          {...(handleOpen && { onClick: () => handleOpen(!open) })}
-          name="hamburgerMenu"
-          aria-controls="main-navigation"
-          aria-label={open ? "Close Navigation Menu" : "Open Navigation Menu"}
-        >
-          {open ? <CloseIcon /> : icon}
-        </button>
-        <nav id="main-navigation" aria-label="Main Navigation Dropdown Menu">
-          {open && hamburgerMenu()}
-        </nav>
-      </div>
-    );
-  };
+	const linkHandler = () => {
+		if (url !== undefined) {
+			return (
+				<li className="nav-item">
+					<Link
+						href={url ? url : "#"}
+						className="icon-button"
+						target="_blank"
+						aria-label={`Link to ${url}. Opens in a new tab.`}
+					>
+						{icon}
+					</Link>
+				</li>
+			);
+		}
+		return (
+			<div className="nav-item">
+				<button
+					className="icon-button"
+					{...(handleOpen && { onClick: () => handleOpen(!open) })}
+					name="hamburgerMenu"
+					aria-controls="main-navigation"
+					aria-label={open ? "Close Navigation Menu" : "Open Navigation Menu"}
+				>
+					{open ? <CloseIcon /> : icon}
+				</button>
+				<nav id={mainNavigationId} aria-label="Main Navigation Dropdown Menu">
+					{open && hamburgerMenu()}
+				</nav>
+			</div>
+		);
+	};
 
-  let variants: Variants = {
-    open: {
-      x: 5,
-      opacity: 1,
-      zIndex: 5,
-    },
-    closed: {
-      pointerEvents: "none",
-    },
-  };
+	let variants: Variants = {
+		open: {
+			x: 5,
+			opacity: 1,
+			zIndex: 5,
+		},
+		closed: {
+			pointerEvents: "none",
+		},
+	};
 
-  let initial = { x: 5 };
+	let initial = { x: 5 };
 
-  if (accessibilityPreference) {
-    initial = { x: 5 };
-  }
+	if (accessibilityPreference) {
+		initial = { x: 5 };
+	}
 
-  if (accessibilityPreference) {
-    variants = {
-      open: {
-        x: 5,
-        opacity: 1,
-        zIndex: 5,
-      },
-      closed: {
-        x: 5,
-        opacity: 0,
-        zIndex: 0,
-        pointerEvents: "none",
-      },
-    };
-  }
+	if (accessibilityPreference) {
+		variants = {
+			open: {
+				x: 5,
+				opacity: 1,
+				zIndex: 5,
+			},
+			closed: {
+				x: 5,
+				opacity: 0,
+				zIndex: 0,
+				pointerEvents: "none",
+			},
+		};
+	}
 
-  const hamburgerMenu = () => {
-    return (
-      <motion.ul
-        initial={initial}
-        animate={open ? "open" : "closed"}
-        transition={{ duration: 0.3, ease: "backInOut" }}
-        className="dropdown"
-        variants={variants}
-      >
-        {children}
-      </motion.ul>
-    );
-  };
+	const hamburgerMenu = () => {
+		return (
+			<motion.ul
+				initial={initial}
+				animate={open ? "open" : "closed"}
+				transition={{ duration: 0.3, ease: "backInOut" }}
+				className="dropdown"
+				variants={variants}
+			>
+				{children}
+			</motion.ul>
+		);
+	};
 
-  return linkHandler();
+	return linkHandler();
 }
