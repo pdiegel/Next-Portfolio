@@ -46,14 +46,16 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
+  --background-opaque: oklch(1 0 0 / 0.85);
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.147 0.004 49.25);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
+  /* --primary: hsl(24, 10%, 10%); */
+  --primary: hsl(24, 45%, 37%);
   --primary-foreground: oklch(0.985 0.001 106.423);
-  --secondary: oklch(0.97 0.001 106.424);
+  --secondary: #f5f5f4;
   --secondary-foreground: oklch(0.216 0.006 56.043);
   --muted: oklch(0.97 0.001 106.424);
   --muted-foreground: oklch(0.553 0.013 58.071);
@@ -80,12 +82,13 @@
 
 .dark {
   --background: oklch(0.147 0.004 49.25);
+  --background-opaque: oklch(0.147 0.004 49.25 / 0.85);
   --foreground: oklch(0.985 0.001 106.423);
   --card: oklch(0.216 0.006 56.043);
   --card-foreground: oklch(0.985 0.001 106.423);
   --popover: oklch(0.216 0.006 56.043);
   --popover-foreground: oklch(0.985 0.001 106.423);
-  --primary: oklch(0.923 0.003 48.717);
+  --primary: hsl(24, 45%, 90%);
   --primary-foreground: oklch(0.216 0.006 56.043);
   --secondary: oklch(0.268 0.007 34.298);
   --secondary-foreground: oklch(0.985 0.001 106.423);
@@ -127,4 +130,12 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bg-background-opaque {
+  background-color: var(--background-opaque);
+}
+
+.svg-icon {
+  fill: var(--foreground);
 }
