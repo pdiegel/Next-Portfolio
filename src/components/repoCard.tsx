@@ -3,9 +3,9 @@ import { StarsIcon } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   Tooltip,
   TooltipContent,

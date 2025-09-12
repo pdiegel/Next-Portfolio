@@ -2,10 +2,10 @@
 import { useCallback, useEffect, useState } from "react";
 import DatabaseHelperImage from "@/../public/project images/database program/image.webp";
 import InkEmbersImage from "@/../public/project images/ink embers/image.webp";
-import ReelRecsImage from "@/../public/project images/reelrecs/image.webp";
-import SpiritSearchImage from "@/../public/project images/spirit search/image.webp";
 import NCParcelSearchImage from "@/../public/project images/nc parcel search/image.webp";
 import PortfolioWebsiteImage from "@/../public/project images/portfolio website/image.webp";
+import ReelRecsImage from "@/../public/project images/reelrecs/image.webp";
+import SpiritSearchImage from "@/../public/project images/spirit search/image.webp";
 import RepoCard from "@/components/repoCard";
 import { SkeletonRepoCard } from "@/components/SkeletonRepoCard";
 import type { Repo, Repos } from "@/interfaces/repos";
