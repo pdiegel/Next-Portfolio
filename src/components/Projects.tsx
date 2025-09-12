@@ -1,9 +1,11 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import DatabaseJobSearch from "@/../public/project images/database program/Close Job Search.webp";
-import InkEmbersHome from "@/../public/project images/ink embers/InkEmbers.webp";
-import ReelRecsHomePage from "@/../public/project images/reelrecs/ReelRecs.webp";
-import SpiritHome from "@/../public/project images/spirit search/HomePage.webp";
+import DatabaseHelperImage from "@/../public/project images/database program/image.webp";
+import InkEmbersImage from "@/../public/project images/ink embers/image.webp";
+import ReelRecsImage from "@/../public/project images/reelrecs/image.webp";
+import SpiritSearchImage from "@/../public/project images/spirit search/image.webp";
+import NCParcelSearchImage from "@/../public/project images/nc parcel search/image.webp";
+import PortfolioWebsiteImage from "@/../public/project images/portfolio website/image.webp";
 import RepoCard from "@/components/repoCard";
 import { SkeletonRepoCard } from "@/components/SkeletonRepoCard";
 import type { Repo, Repos } from "@/interfaces/repos";
@@ -12,19 +14,27 @@ import { Skeleton } from "./ui/skeleton";
 const projectPreviews = [
   {
     name: "Spirit-Search",
-    images: [SpiritHome],
+    images: [SpiritSearchImage],
   },
   {
     name: "DatabaseManagementHelper",
-    images: [DatabaseJobSearch],
+    images: [DatabaseHelperImage],
   },
   {
     name: "ReelRecsMovieRecommendation",
-    images: [ReelRecsHomePage],
+    images: [ReelRecsImage],
   },
   {
     name: "Responsive-Business-Website",
-    images: [InkEmbersHome],
+    images: [InkEmbersImage],
+  },
+  {
+    name: "NC-Parcel-Search",
+    images: [NCParcelSearchImage],
+  },
+  {
+    name: "Next-Portfolio",
+    images: [PortfolioWebsiteImage],
   },
 ];
 
@@ -43,7 +53,7 @@ const projectNicknames = {
   "Responsive-Business-Website": "Business Website",
 } as { [key: string]: string };
 
-const featuredProjects = ["Spirit-Search", "DatabaseManagementHelper"];
+const featuredProjects = ["Spirit-Search", "NC-Parcel-Search"];
 
 const projectBlacklist = ["pdiegel"];
 
@@ -51,12 +61,12 @@ export default function Projects() {
   const [repos, setRepos] = useState([] as Repos);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Sort repos by creation date, then by featured projects
+  // Sort repos by latest push date, then by featured projects
   const sortRepos = useCallback((repos: Repos) => {
     let sortedRepos = [...repos];
     sortedRepos = sortedRepos.sort(
       (a, b) =>
-        new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+        new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime(),
     );
     return sortedRepos.sort((a, b) => {
       if (

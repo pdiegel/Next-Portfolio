@@ -4,8 +4,13 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const languageIconMap: {
   [key: string]: string;
@@ -17,7 +22,7 @@ export default function RepoCard({
   name,
   languages_url,
   homepage,
-  updated_at,
+  pushed_at,
   projectPreviews,
   projectNicknames,
   featured,
@@ -27,7 +32,7 @@ export default function RepoCard({
   name: string;
   languages_url: string;
   homepage: UrlObject;
-  updated_at: string;
+  pushed_at: string;
   projectPreviews: { name: string; images: StaticImageData[] }[];
   projectNicknames: { [key: string]: string };
   featured: boolean;
@@ -56,7 +61,7 @@ export default function RepoCard({
       });
   }, [languages_url, name]);
 
-  const lastUpdated = new Date(updated_at).toLocaleDateString("en-US", {
+  const lastUpdated = new Date(pushed_at).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -76,7 +81,7 @@ export default function RepoCard({
 
   return (
     <Card
-      className={`md:flex-row-reverse p-4 md:p-6 justify-between gap-12 rounded-md ${previewCard ? "col-span-1 md:col-span-2" : "flex-wrap"}`}
+      className={`md:flex-row-reverse p-4 md:p-6 justify-between gap-12 rounded-md ${previewCard ? "col-span-1 md:col-span-2" : "flex-wrap order-1"}`}
     >
       {/* Project Image */}
       {previewCard && (
@@ -117,17 +122,25 @@ export default function RepoCard({
             className="flex flex-wrap gap-2"
             aria-label={`Programming languages used in ${projectName}`}
           >
+            {/* Language icons */}
             {languages?.map((value) => {
               if (value in languageIconMap) {
                 return (
                   <li key={`${projectName} ${value} icon`}>
-                    <Image
-                      className="rounded-md"
-                      src={languageIconMap[value]}
-                      alt={`${value} icon`}
-                      width={30}
-                      height={30}
-                    />
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Image
+                          className="rounded-md"
+                          src={languageIconMap[value]}
+                          alt={`${value} icon`}
+                          width={30}
+                          height={30}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent className="">
+                        <p>{value}</p>
+                      </TooltipContent>
+                    </Tooltip>
                   </li>
                 );
               }
