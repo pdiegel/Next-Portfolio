@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+const receiverEmail = process.env.EMAIL_USERNAME;
+const receiverEmailPassword = process.env.EMAIL_PASSWORD;
+
 export async function POST(req: NextRequest) {
   const { name, email, message } = await req.json();
 
@@ -9,8 +12,8 @@ export async function POST(req: NextRequest) {
     port: 587,
     secure: false, // use SSL
     auth: {
-      user: process.env.EMAIL_USERNAME,
-      pass: process.env.EMAIL_PASSWORD,
+      user: receiverEmail,
+      pass: receiverEmailPassword,
     },
   });
 
@@ -23,7 +26,7 @@ export async function POST(req: NextRequest) {
 
   const mailOptions = {
     from: email,
-    to: process.env.EMAIL_USERNAME,
+    to: receiverEmail,
     subject: `New message from ${name}`,
     text: `From: ${email}\n\nMessage: ${message}`,
   };
